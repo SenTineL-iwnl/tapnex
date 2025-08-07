@@ -6,6 +6,10 @@
   <title>Why Businesses Choose TapNex - TapNex Technologies</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -13,19 +17,50 @@
       color: #333;
     }
 
-    header {
+    /* HEADER STYLE */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0f2027;
+      color: #fff;
+      padding: 20px 50px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar h1 {
+      font-size: 1.8rem;
+      margin: 0;
+      color: #ff7f50;
+    }
+
+    .nav-links a {
+      margin-left: 30px;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ff7f50;
+    }
+
+    header.page-header {
       background: linear-gradient(to right, #16222a, #3a6073);
       color: white;
       padding: 80px 20px;
       text-align: center;
     }
 
-    header h1 {
+    header.page-header h1 {
       font-size: 3rem;
       margin-bottom: 10px;
     }
 
-    header p {
+    header.page-header p {
       max-width: 800px;
       margin: auto;
       font-size: 1.1rem;
@@ -56,7 +91,7 @@
       margin-top: 0;
     }
 
-    .blog-section p {
+    .blog-section p, .blog-section ul {
       line-height: 1.8;
       font-size: 1.05rem;
     }
@@ -85,7 +120,22 @@
     }
 
     @media (max-width: 768px) {
-      header h1 {
+      .navbar {
+        flex-direction: column;
+        padding: 15px 20px;
+        text-align: center;
+      }
+
+      .nav-links {
+        margin-top: 10px;
+      }
+
+      .nav-links a {
+        margin: 10px;
+        display: block;
+      }
+
+      header.page-header h1 {
         font-size: 2.2rem;
       }
     }
@@ -93,11 +143,25 @@
 </head>
 <body>
 
-  <header>
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <h1>TapNex</h1>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="blog2.html">Blog</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </div>
+
+  <!-- BLOG HEADER -->
+  <header class="page-header">
     <h1>Why Businesses Choose TapNex</h1>
     <p>Exploring the value TapNex Technologies brings to modern IT staffing strategies.</p>
   </header>
 
+  <!-- BLOG CONTENT -->
   <div class="container">
 
     <div class="blog-section">
