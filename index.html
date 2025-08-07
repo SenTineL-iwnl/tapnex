@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TapNex Technologies</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: #ffffff;
+      color: #333;
+      line-height: 1.6;
+    }
+    nav {
+      background: #001f3f;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('https://images.pexels.com/photos/1181316/pexels-photo-1181316.jpeg') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease-in-out;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    .btn {
+      padding: 14px 30px;
+      background: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      transition: background 0.3s;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .btn:hover {
+      background: #0056b3;
+    }
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .image-text-section {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+    .item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background: #f9f9f9;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+    }
+    .item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    .item:hover {
+      transform: translateY(-5px);
+    }
+    .item img {
+      width: 50%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .item-content {
+      padding: 40px;
+      width: 50%;
+    }
+    .item-content h3 {
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+    .item-content p {
+      font-size: 1rem;
+    }
+    .testimonials {
+      background: #f0f4f8;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .testimonial {
+      max-width: 700px;
+      margin: 20px auto;
+      font-style: italic;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    footer {
+      background: #001f3f;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 50px;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h2>TapNex Technologies</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog1.html">Blog 1</a></li>
+      <li><a href="blog2.html">Blog 2</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <header class="hero">
+    <h1>Empowering Your Workforce, One Placement at a Time</h1>
+    <p>Top-tier IT staffing and smart workforce solutions at your service.</p>
+    <a href="contact.html" class="btn">Get Started</a>
+  </header>
+  <section class="image-text-section">
+    <div class="item"><img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg" alt="IT Staffing" /><div class="item-content"><h3>Tailored IT Staffing Solutions</h3><p>We connect your business with the top 5% of tech talent to meet your project and business goals.</p></div></div>
+    <div class="item"><img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg" alt="Consulting" /><div class="item-content"><h3>Strategic IT Consulting</h3><p>Get expert consulting to digitally transform your business with scalable IT solutions.</p></div></div>
+    <div class="item"><img src="https://images.pexels.com/photos/1181314/pexels-photo-1181314.jpeg" alt="Remote Team" /><div class="item-content"><h3>Remote Workforce Setup</h3><p>Build and manage high-performing remote teams with our smart staffing strategies.</p></div></div>
+    <div class="item"><img src="https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg" alt="Cloud Services" /><div class="item-content"><h3>Cloud-Ready Infrastructure</h3><p>TapNex helps you scale with secure and reliable cloud services tailored to your business.</p></div></div>
+    <div class="item"><img src="https://images.pexels.com/photos/3182759/pexels-photo-3182759.jpeg" alt="Innovation" /><div class="item-content"><h3>Innovation and Agility</h3><p>We embed innovation in every layer, helping businesses stay agile and future-ready.</p></div></div>
+  </section>
+  <section class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial">“TapNex Technologies provided exceptional staffing support during our critical transition phase. Their consultants were top-notch and dependable.” – Tech Enterprise</div>
+    <div class="testimonial">“A highly professional IT partner. We rely on TapNex for consistent, quality talent and scalable workforce solutions.” – GlobalSoft Inc.</div>
+  </section>
+  <footer>
+    <p>&copy; 2025 TapNex Technologies. All rights reserved.</p>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>AOS.init({ duration: 1000 });</script>
+</body>
+</html>
