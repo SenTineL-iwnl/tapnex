@@ -3,188 +3,231 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Services - TapNex Technologies</title>
+  <title>Our Services - TapNex Technologies</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: #f4f7fb;
+      background: #f2f5f9;
       color: #333;
     }
 
-    header {
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0f2027;
+      color: #fff;
+      padding: 20px 50px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar h1 {
+      font-size: 1.8rem;
+      margin: 0;
+      color: #ff7f50;
+    }
+
+    .nav-links a {
+      margin-left: 30px;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ff7f50;
+    }
+
+    header.page-header {
+      background: linear-gradient(to right, #16222a, #3a6073);
       color: white;
       padding: 80px 20px;
       text-align: center;
     }
 
-    header h1 {
+    header.page-header h1 {
       font-size: 3rem;
       margin-bottom: 10px;
     }
 
-    header p {
+    header.page-header p {
+      font-size: 1.1rem;
       max-width: 800px;
       margin: auto;
-      font-size: 1.2rem;
     }
 
-    section {
-      padding: 60px 20px;
+    .container {
       max-width: 1200px;
-      margin: auto;
+      margin: 60px auto;
+      padding: 0 20px;
+      animation: fadeIn 1.2s ease;
     }
 
     .service-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
     }
 
-    .card {
-      background: #fff;
+    .service-box {
+      background: white;
+      padding: 30px;
       border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    .service-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
     }
 
-    .card img {
+    .service-box img {
       width: 100%;
       height: 180px;
       object-fit: cover;
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
     }
 
-    .card-body {
-      padding: 20px;
-    }
-
-    .card-body h3 {
+    .service-box h3 {
+      color: #3a6073;
       margin-top: 0;
-      color: #0f2027;
     }
 
-    .card-body p {
-      font-size: 0.95rem;
+    .service-box p {
+      font-size: 1rem;
       line-height: 1.6;
     }
 
     .cta {
-      background: #0f2027;
-      color: white;
       text-align: center;
-      padding: 60px 20px;
       margin-top: 60px;
     }
 
-    .cta h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-
     .cta a {
-      display: inline-block;
       background: #ff7f50;
-      padding: 12px 28px;
       color: white;
-      border-radius: 6px;
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      border-radius: 8px;
       text-decoration: none;
-      font-weight: bold;
       transition: background 0.3s;
     }
 
     .cta a:hover {
-      background: #e86c3e;
+      background: #e0693f;
     }
 
     footer {
       text-align: center;
       padding: 30px;
-      font-size: 0.9rem;
       color: #777;
+      margin-top: 60px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.2rem;
+      .navbar {
+        flex-direction: column;
+        padding: 15px 20px;
+        text-align: center;
       }
 
-      .cta h2 {
-        font-size: 1.5rem;
+      .nav-links {
+        margin-top: 10px;
+      }
+
+      .nav-links a {
+        margin: 10px;
+        display: block;
+      }
+
+      header.page-header h1 {
+        font-size: 2.2rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <h1>TapNex</h1>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="blog2.html">Blog</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
     <h1>IT Staffing Services</h1>
-    <p>TapNex Technologies delivers flexible, scalable, and innovative IT staffing solutions tailored to meet your business demands.</p>
+    <p>Customized IT talent solutions designed to scale your business with confidence.</p>
   </header>
 
-  <section class="service-grid">
+  <!-- SERVICES -->
+  <div class="container">
+    <div class="service-grid">
 
-    <div class="card">
-      <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Contract Staffing">
-      <div class="card-body">
+      <div class="service-box">
+        <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Permanent Staffing">
+        <h3>Permanent IT Staffing</h3>
+        <p>Hire full-time, long-term professionals across cloud, DevOps, data science, cybersecurity, and more. We ensure culture fit and skill alignment.</p>
+      </div>
+
+      <div class="service-box">
+        <img src="https://images.pexels.com/photos/3182763/pexels-photo-3182763.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Contract Staffing">
         <h3>Contract Staffing</h3>
-        <p>Deploy top-tier tech professionals for temporary assignments, projects, or peak workloads without long-term commitment.</p>
+        <p>Get on-demand tech talent for short-term projects or seasonal demand — from front-end developers to AI engineers.</p>
       </div>
+
+      <div class="service-box">
+        <img src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Remote Staffing">
+        <h3>Remote IT Staffing</h3>
+        <p>Expand globally by hiring top-tier remote engineers, consultants, and developers from our global network of vetted professionals.</p>
+      </div>
+
+      <div class="service-box">
+        <img src="https://images.pexels.com/photos/4348404/pexels-photo-4348404.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Specialized Talent Acquisition">
+        <h3>Specialized Tech Hiring</h3>
+        <p>We help you find talent in niche technologies such as machine learning, blockchain, SAP, and cloud-native systems.</p>
+      </div>
+
+      <div class="service-box">
+        <img src="https://images.pexels.com/photos/3862379/pexels-photo-3862379.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Project-Based Teams">
+        <h3>Project-Based Staffing</h3>
+        <p>We quickly build agile teams tailored to your projects — developers, testers, PMs, and architects — delivered as a package.</p>
+      </div>
+
+      <div class="service-box">
+        <img src="https://images.pexels.com/photos/3862617/pexels-photo-3862617.jpeg?auto=compress&cs=tinysrgb&w=800" alt="IT Staff Augmentation">
+        <h3>IT Staff Augmentation</h3>
+        <p>Plug in our skilled professionals to boost your internal team’s productivity while staying cost-effective and flexible.</p>
+      </div>
+
     </div>
 
-    <div class="card">
-      <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Permanent Hiring">
-      <div class="card-body">
-        <h3>Permanent IT Hiring</h3>
-        <p>Find and retain highly skilled full-time IT professionals, from software engineers to data scientists and cybersecurity experts.</p>
-      </div>
+    <!-- CTA -->
+    <div class="cta">
+      <a href="contact.html">Talk to Us</a>
     </div>
-
-    <div class="card">
-      <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Remote Teams">
-      <div class="card-body">
-        <h3>Remote Tech Teams</h3>
-        <p>Build distributed IT teams with global reach. TapNex manages onboarding, compliance, and productivity tracking for remote resources.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.pexels.com/photos/3182803/pexels-photo-3182803.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Executive IT Search">
-      <div class="card-body">
-        <h3>Executive IT Search</h3>
-        <p>Our senior tech hiring services help you identify visionary CTOs, CIOs, and digital leaders aligned with your growth strategy.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.pexels.com/photos/3182822/pexels-photo-3182822.jpeg?auto=compress&cs=tinysrgb&w=800" alt="IT Staff Augmentation">
-      <div class="card-body">
-        <h3>Staff Augmentation</h3>
-        <p>Enhance your in-house development teams with qualified engineers, architects, testers, and analysts — when and where you need them.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.pexels.com/photos/1181273/pexels-photo-1181273.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Offshore Development">
-      <div class="card-body">
-        <h3>Offshore IT Staffing</h3>
-        <p>Tap into global IT talent pools. We help you build cost-efficient offshore teams with robust delivery and transparent reporting.</p>
-      </div>
-    </div>
-
-  </section>
-
-  <div class="cta">
-    <h2>Need qualified IT professionals?</h2>
-    <a href="contact-us.html">Talk to Our Staffing Experts</a>
   </div>
 
   <footer>
