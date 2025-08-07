@@ -27,6 +27,14 @@
       align-items: center;
       color: #fff;
     }
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+    .logo-container img {
+      height: 50px;
+      margin-right: 10px;
+    }
     nav ul {
       list-style: none;
       display: flex;
@@ -143,7 +151,10 @@
 </head>
 <body>
   <nav>
-    <h2>TapNex Technologies</h2>
+    <div class="logo-container">
+      <img src="https://raw.githubusercontent.com/SenTineL-iwnl/tapnex/main/Geometric%20Logo%20with%20Navy%20and%20Silver.png" alt="TapNex Logo">
+      <h2>TapNex Technologies</h2>
+    </div>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html">Services</a></li>
@@ -171,10 +182,34 @@
     <div class="testimonial">“TapNex Technologies provided exceptional staffing support during our critical transition phase. Their consultants were top-notch and dependable.” – Tech Enterprise</div>
     <div class="testimonial">“A highly professional IT partner. We rely on TapNex for consistent, quality talent and scalable workforce solutions.” – GlobalSoft Inc.</div>
   </section>
-  <footer>
+  <footer style="background: #001f3f; color: white; padding: 60px 20px;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: auto;">
+    <div style="flex: 1 1 250px; margin-bottom: 30px;">
+      <h3 style="margin-bottom: 20px;">TapNex Technologies</h3>
+      <p>Empowering your workforce through smart, scalable IT staffing solutions. Your growth is our mission.</p>
+    </div>
+    <div style="flex: 1 1 200px; margin-bottom: 30px;">
+      <h4 style="margin-bottom: 10px;">Quick Links</h4>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="index.html" style="color: white; text-decoration: none;">Home</a></li>
+        <li><a href="services.html" style="color: white; text-decoration: none;">Services</a></li>
+        <li><a href="about.html" style="color: white; text-decoration: none;">About</a></li>
+        <li><a href="contact.html" style="color: white; text-decoration: none;">Contact</a></li>
+      </ul>
+    </div>
+    <div style="flex: 1 1 250px; margin-bottom: 30px;">
+      <h4 style="margin-bottom: 10px;">Contact Us</h4>
+      <p>Email: info@tapnex.com</p>
+      <p>Phone: +1 800 123 4567</p>
+      <p>Address: 123 Innovation Drive, Suite 400<br>Silicon Valley, CA 94043</p>
+    </div>
+  </div>
+  <div style="text-align: center; margin-top: 30px; border-top: 1px solid #444; padding-top: 20px;">
     <p>&copy; 2025 TapNex Technologies. All rights reserved.</p>
-  </footer>
+  </div>
+</footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>AOS.init({ duration: 1000 });</script>
 </body>
 </html>
+
