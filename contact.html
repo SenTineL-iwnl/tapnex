@@ -2,82 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us | TapNex Technologies</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us - TapNex Technologies</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: #f4f7fa;
+      background: #f4f7fb;
       color: #333;
     }
+
     header {
-      background: linear-gradient(to right, #003973, #E5E5BE);
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
       color: white;
-      padding: 60px 20px;
+      padding: 80px 20px;
       text-align: center;
-      animation: fadeIn 1.5s ease-out;
     }
+
     header h1 {
-      margin: 0;
-      font-size: 2.8rem;
+      font-size: 3rem;
+      margin-bottom: 10px;
     }
 
-    .container {
-      max-width: 1100px;
+    header p {
+      max-width: 800px;
       margin: auto;
-      padding: 40px 20px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      animation: slideUp 1.2s ease-out;
-    }
-
-    .contact-info, .contact-form {
-      flex: 1 1 45%;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      padding: 30px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .contact-info:hover, .contact-form:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    }
-
-    .info-item {
-      display: flex;
-      align-items: center;
-      margin: 20px 0;
-    }
-
-    .info-item img {
-      width: 40px;
-      margin-right: 15px;
-      transition: transform 0.3s ease;
-    }
-
-    .info-item:hover img {
-      transform: scale(1.1);
-    }
-
-    .info-item div {
       font-size: 1.1rem;
     }
 
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .contact-form {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
     .contact-form h2 {
-      margin-bottom: 20px;
-      font-size: 1.8rem;
-      color: #003973;
+      margin-top: 0;
+      color: #0f2027;
     }
 
     .contact-form label {
       display: block;
-      margin-top: 15px;
-      margin-bottom: 5px;
+      margin: 15px 0 5px;
       font-weight: 600;
     }
 
@@ -88,122 +65,107 @@
       border: 1px solid #ccc;
       border-radius: 6px;
       font-size: 1rem;
-      transition: border-color 0.3s ease;
     }
 
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      border-color: #003973;
-      outline: none;
+    .contact-form textarea {
+      resize: vertical;
+      height: 120px;
     }
 
     .contact-form button {
       margin-top: 20px;
-      padding: 14px 24px;
-      background: #003973;
-      color: white;
+      padding: 12px 24px;
       border: none;
-      font-size: 1rem;
+      background: #ff7f50;
+      color: white;
+      font-weight: bold;
       border-radius: 6px;
       cursor: pointer;
       transition: background 0.3s ease;
     }
 
     .contact-form button:hover {
-      background: #0054a6;
+      background: #e86c3e;
     }
 
-    .legal {
-      font-size: 0.85rem;
-      color: #666;
-      margin-top: 15px;
+    .contact-img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-img img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 12px;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .contact-img img:hover {
+      transform: scale(1.02);
     }
 
     footer {
       text-align: center;
-      padding: 20px;
-      background: #003973;
-      color: white;
+      padding: 30px;
       font-size: 0.9rem;
-      margin-top: 40px;
+      color: #777;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+    @media (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
 
-    @keyframes slideUp {
-      from { transform: translateY(40px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+      .contact-img {
+        order: -1;
+        margin-bottom: 30px;
+      }
     }
 
     @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
+      header h1 {
+        font-size: 2.2rem;
       }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Contact TapNex Technologies</h1>
-</header>
+  <header>
+    <h1>Contact Us</h1>
+    <p>We’re here to help you find the right tech talent or answer your staffing questions. Let’s connect.</p>
+  </header>
 
-<div class="container">
-  <!-- Contact Info -->
-  <div class="contact-info">
-    <div class="info-item">
-      <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Phone Icon">
-      <div><strong>Phone:</strong> +1 (555) 123‑4567</div>
+  <div class="container">
+    <div class="contact-form">
+      <h2>Get in Touch</h2>
+      <form action="#" method="post">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" required />
+
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
     </div>
-    <div class="info-item">
-      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email Icon">
-      <div><strong>Email:</strong> contact@tapnextech.com</div>
-    </div>
-    <div class="info-item">
-      <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Location Icon">
-      <div><strong>Address:</strong> 123 Innovation Drive, Techville, USA</div>
-    </div>
-    <div class="info-item">
-      <img src="https://cdn-icons-png.flaticon.com/512/2201/2201570.png" alt="Clock Icon">
-      <div><strong>Hours:</strong> Mon – Fri, 9 AM – 6 PM</div>
+
+    <div class="contact-img">
+      <img src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Contact Us Image">
     </div>
   </div>
 
-  <!-- Contact Form -->
-  <div class="contact-form">
-    <h2>Get in Touch</h2>
-    <form action="/submit-contact" method="POST">
-      <label for="name">Full Name *</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">Email Address *</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone">
-
-      <label for="message">Your Message *</label>
-      <textarea id="message" name="message" rows="6" required></textarea>
-
-      <div class="legal">
-        <input type="checkbox" id="agreement" name="agreement" required>
-        <label for="agreement">
-          I agree to the <a href="/terms-of-use">Terms</a> & <a href="/privacy-policy">Privacy Policy</a>.
-        </label>
-        <p>By submitting, you consent to TapNex Technologies contacting you. Standard message rates apply.</p>
-      </div>
-
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
-</div>
-
-<footer>
-  © 2025 TapNex Technologies. All rights reserved.
-</footer>
+  <footer>
+    &copy; 2025 TapNex Technologies. All rights reserved.
+  </footer>
 
 </body>
 </html>
