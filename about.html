@@ -4,90 +4,145 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About Us - TapNex Technologies</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: #eef2f5;
+      font-family: 'Poppins', sans-serif;
+      background: #f2f5f9;
       color: #333;
     }
 
-    header {
-      background: linear-gradient(to right, #004e92, #000428);
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0f2027;
+      color: #fff;
+      padding: 20px 50px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar h1 {
+      font-size: 1.8rem;
+      margin: 0;
+      color: #ff7f50;
+    }
+
+    .nav-links a {
+      margin-left: 30px;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ff7f50;
+    }
+
+    header.page-header {
+      background: linear-gradient(to right, #16222a, #3a6073);
+      color: white;
       padding: 80px 20px;
       text-align: center;
-      color: #fff;
-      animation: fadeIn 1s ease-out;
     }
 
-    header h1 {
+    header.page-header h1 {
       font-size: 3rem;
-      margin: 0;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    section {
-      background: #fff;
-      margin-bottom: 40px;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s, box-shadow 0.3s;
-      animation: slideUp 0.8s ease-out;
-    }
-
-    section:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    }
-
-    h2 {
-      color: #004e92;
-      margin-top: 0;
-    }
-
-    p {
-      line-height: 1.7;
-      font-size: 1.05rem;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    ul li {
       margin-bottom: 10px;
     }
 
-    img {
-      width: 100%;
-      margin-top: 25px;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
+    header.page-header p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: auto;
     }
 
-    img:hover {
-      transform: scale(1.02);
+    .content {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .about-section {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .about-text {
+      flex: 1 1 500px;
+    }
+
+    .about-text h2 {
+      color: #3a6073;
+    }
+
+    .about-text p {
+      line-height: 1.7;
+      margin: 20px 0;
+    }
+
+    .about-img {
+      flex: 1 1 400px;
+    }
+
+    .about-img img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-img img:hover {
+      transform: scale(1.03);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #777;
+      margin-top: 60px;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes slideUp {
       from { opacity: 0; transform: translateY(40px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 768px) {
-      header h1 {
+      .navbar {
+        flex-direction: column;
+        padding: 15px 20px;
+        text-align: center;
+      }
+
+      .nav-links {
+        margin-top: 10px;
+      }
+
+      .nav-links a {
+        margin: 10px;
+        display: block;
+      }
+
+      .about-section {
+        flex-direction: column;
+      }
+
+      header.page-header h1 {
         font-size: 2.2rem;
       }
     }
@@ -95,39 +150,45 @@
 </head>
 <body>
 
-  <header>
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <h1>TapNex</h1>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="blog2.html">Blog</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
     <h1>About TapNex Technologies</h1>
+    <p>Your trusted partner in innovative and reliable IT staffing solutions.</p>
   </header>
 
-  <div class="container">
-    <section>
-      <h2>Our Journey</h2>
-      <p>
-        TapNex Technologies was founded with a vision to innovate the world of IT staffing and digital transformation. Our mission is to connect exceptional tech talent with forward-thinking enterprises that demand excellence. We've helped companies scale and adapt to digital shifts — reliably and quickly.
-      </p>
-      <img src="https://cdn.pixabay.com/photo/2016/11/08/05/26/business-1805492_1280.jpg" alt="Business Team Meeting">
-    </section>
+  <!-- ABOUT CONTENT -->
+  <div class="content">
+    <div class="about-section">
+      <div class="about-text">
+        <h2>Who We Are</h2>
+        <p>TapNex Technologies is a forward-thinking IT staffing firm dedicated to helping organizations scale with top-tier tech talent. Our mission is simple — connect businesses with highly skilled professionals who not only meet technical requirements but align with company culture and goals.</p>
 
-    <section>
-      <h2>Core Values</h2>
-      <p>Our values are the DNA of our company culture. They guide every decision and every partnership:</p>
-      <ul>
-        <li><strong>Trust:</strong> We build long-term relationships through transparency and reliability.</li>
-        <li><strong>Agility:</strong> In a fast-changing world, we adapt quickly and efficiently.</li>
-        <li><strong>Innovation:</strong> We embrace new technologies to deliver smarter solutions.</li>
-        <li><strong>Excellence:</strong> We go above and beyond to deliver exceptional value.</li>
-      </ul>
-      <img src="https://cdn.pixabay.com/photo/2018/03/01/14/50/social-media-3190194_1280.jpg" alt="Company Values">
-    </section>
+        <p>With a deep understanding of the technology landscape and a people-first approach, we offer staffing solutions that go beyond just filling roles. Whether you're a startup or a Fortune 500 company, we tailor our services to meet your evolving business needs.</p>
 
-    <section>
-      <h2>Future Vision</h2>
-      <p>
-        Our goal is to become the most trusted name in tech consulting and staffing by delivering value-driven results. We’re investing in AI, cloud, and automation — and in people — to lead the next wave of IT transformation.
-      </p>
-      <img src="https://cdn.pixabay.com/photo/2021/04/15/10/12/artificial-intelligence-6188887_1280.jpg" alt="Technology Vision">
-    </section>
+        <h2>What Sets Us Apart</h2>
+        <p>At TapNex, our strength lies in our process, people, and partnerships. Our consultants are carefully vetted, trained, and supported to ensure they deliver maximum value. We build long-term relationships and offer 24/7 support, strategic consulting, and workforce optimization tailored to your industry.</p>
+      </div>
+      <div class="about-img">
+        <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800" alt="TapNex Team">
+      </div>
+    </div>
   </div>
+
+  <footer>
+    &copy; 2025 TapNex Technologies. All rights reserved.
+  </footer>
 
 </body>
 </html>
