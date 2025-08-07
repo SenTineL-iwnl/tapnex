@@ -3,188 +3,153 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us - TapNex Technologies</title>
+  <title>Contact Us | TapNex Technologies</title>
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/SenTineL-iwnl/tapnex/main/Geometric%20Logo%20with%20Navy%20and%20Silver.png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
     body {
-      background-color: #f9f9f9;
-      color: #333;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f4f6f9;
     }
-
-    nav {
+    header {
       background: #001f3f;
       padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: #fff;
+      color: white;
     }
-
     .logo-container {
       display: flex;
       align-items: center;
     }
-
     .logo-container img {
       height: 50px;
       margin-right: 10px;
     }
-
     nav ul {
       list-style: none;
       display: flex;
-      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
     }
-
     nav ul li {
-      margin: 0 15px;
+      margin-left: 20px;
     }
-
     nav ul li a {
-      color: #fff;
+      color: white;
       text-decoration: none;
       font-weight: 600;
     }
-
-    header {
-      background-color: #e5ecf4;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.1rem;
-      color: #555;
-    }
-
-    .contact-section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: 40px auto;
-      background-color: #ffffff;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
-      border-radius: 8px;
-      text-align: center;
-    }
-
-    .contact-section img {
-      width: 100%;
-      max-height: 300px;
-      object-fit: cover;
-      border-radius: 8px 8px 0 0;
-      margin-bottom: 20px;
-    }
-
-    .contact-section h2 {
-      font-size: 2rem;
-      margin-bottom: 15px;
-    }
-
-    .contact-info {
-      font-size: 1.1rem;
-      margin: 20px 0;
-    }
-
-    .contact-info a {
-      color: #007bff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .support-button {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 14px 30px;
-      background-color: #007bff;
+    .contact-hero {
+      background: url('https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg') no-repeat center center/cover;
+      padding: 100px 20px;
       color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
-      text-decoration: none;
-      transition: background 0.3s;
+      text-align: center;
     }
-
-    .support-button:hover {
-      background-color: #0056b3;
+    .contact-hero h1 {
+      font-size: 3rem;
     }
-
-    footer {
-      background: #001f3f;
-      color: #fff;
-      padding: 60px 20px;
-      margin-top: 60px;
-    }
-
-    .footer-container {
-      max-width: 1200px;
-      margin: auto;
+    .contact-container {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
       gap: 40px;
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
     }
-
-    .footer-column {
-      flex: 1 1 250px;
+    .form-container {
+      flex: 1 1 500px;
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-
-    .footer-column h3 {
+    .form-container h2 {
       margin-bottom: 20px;
-      font-size: 1.2rem;
+      font-size: 1.8rem;
     }
-
-    .footer-column p,
-    .footer-column a {
-      color: #ccc;
-      font-size: 0.95rem;
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    .form-group textarea {
+      resize: vertical;
+      height: 120px;
+    }
+    .form-container button {
+      background: #007bff;
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .form-container button:hover {
+      background: #0056b3;
+    }
+    .info-box {
+      flex: 1 1 300px;
+      background: #007bff;
+      color: white;
+      padding: 40px;
+      border-radius: 10px;
+    }
+    .info-box h3 {
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+    }
+    .info-box p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .info-box a {
+      display: inline-block;
+      margin-top: 20px;
+      background: white;
+      color: #007bff;
+      padding: 10px 20px;
       text-decoration: none;
-      line-height: 1.8;
+      border-radius: 5px;
+      font-weight: 600;
     }
-
-    .footer-column a:hover {
-      color: #fff;
-      text-decoration: underline;
-    }
-
-    .footer-bottom {
+    footer {
+      background: #001f3f;
+      color: white;
+      padding: 50px 20px;
       text-align: center;
-      margin-top: 40px;
-      font-size: 0.9rem;
-      border-top: 1px solid #444;
-      padding-top: 20px;
+    }
+    footer p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 0.95rem;
+      color: #ccc;
+    }
+    footer .footer-links {
+      margin: 20px 0;
+    }
+    footer .footer-links a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    footer .footer-email {
+      margin-top: 10px;
+      font-size: 0.95rem;
       color: #ccc;
     }
 
     @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav ul {
-        flex-direction: column;
-        width: 100%;
-        padding: 10px 0;
-      }
-
-      nav ul li {
-        margin: 8px 0;
-      }
-
-      .footer-container {
+      .contact-container {
         flex-direction: column;
       }
     }
@@ -192,51 +157,62 @@
 </head>
 <body>
 
-  <nav>
+  <header>
     <div class="logo-container">
       <img src="https://raw.githubusercontent.com/SenTineL-iwnl/tapnex/main/Geometric%20Logo%20with%20Navy%20and%20Silver.png" alt="TapNex Logo">
       <h2>TapNex Technologies</h2>
     </div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="careers.html">Careers</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="blog1.html">Blog 1</a></li>
-      <li><a href="blog2.html">Blog 2</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-
-  <header>
-    <h1>Contact Us</h1>
-    <p>We're here to help and answer any question you might have.</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog1.html">Blog 1</a></li>
+        <li><a href="blog2.html">Blog 2</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <div class="contact-section">
-    <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" alt="Contact Banner">
-    <h2>Let's Talk</h2>
-    <p class="contact-info">
-      Email us at: <br><br>
-      <a href="mailto:contact@tapnextech.com">contact@tapnextech.com</a>
-    </p>
-    <a href="mailto:contact@tapnextech.com" class="support-button">Contact Us</a>
-  </div>
+  <section class="contact-hero">
+    <h1>Get in Touch</h1>
+    <p>We'd love to hear from you. Whether it's a project, partnership or just a chat.</p>
+  </section>
+
+  <section class="contact-container">
+    <div class="form-container">
+      <h2>Send us a Message</h2>
+      <form action="mailto:contact@tapnextech.com" method="post" enctype="text/plain">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Your Name" required />
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Your Email" required />
+        </div>
+        <div class="form-group">
+          <textarea name="message" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div class="info-box">
+      <h3>Let's Work Together</h3>
+      <p>At TapNex Technologies, we’re here to help you succeed with smart staffing strategies and reliable tech talent.</p>
+      <p>Email us at: <strong>contact@tapnextech.com</strong></p>
+      <a href="mailto:contact@tapnextech.com">Contact Us</a>
+    </div>
+  </section>
 
   <footer>
-    <div class="footer-container">
-      <div class="footer-column">
-        <h3>About TapNex</h3>
-        <p>TapNex Technologies connects top-tier IT talent with leading organizations. We build strong teams that deliver results.</p>
-      </div>
-      <div class="footer-column">
-        <h3>Email</h3>
-        <p><a href="mailto:contact@tapnextech.com">contact@tapnextech.com</a></p>
-      </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a> |
+      <a href="services.html">Services</a> |
+      <a href="about.html">About</a> |
+      <a href="blog1.html">Blog</a> |
+      <a href="contact.html">Contact</a>
     </div>
-    <div class="footer-bottom">
-      &copy; 2025 TapNex Technologies. All rights reserved.
-    </div>
+    <div class="footer-email">Email: contact@tapnextech.com</div>
+    <p>&copy; 2025 TapNex Technologies. All rights reserved.</p>
   </footer>
 
 </body>
