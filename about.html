@@ -1,1 +1,133 @@
-<!DOCTYPE html><html><head><title>About</title></head><body><h1>About Us</h1><p>We provide world-class IT staffing solutions.</p></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us - TapNex Technologies</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: #eef2f5;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #004e92, #000428);
+      padding: 80px 20px;
+      text-align: center;
+      color: #fff;
+      animation: fadeIn 1s ease-out;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      background: #fff;
+      margin-bottom: 40px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: slideUp 0.8s ease-out;
+    }
+
+    section:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    h2 {
+      color: #004e92;
+      margin-top: 0;
+    }
+
+    p {
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    img {
+      width: 100%;
+      margin-top: 25px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.02);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>About TapNex Technologies</h1>
+  </header>
+
+  <div class="container">
+    <section>
+      <h2>Our Journey</h2>
+      <p>
+        TapNex Technologies was founded with a vision to innovate the world of IT staffing and digital transformation. Our mission is to connect exceptional tech talent with forward-thinking enterprises that demand excellence. We've helped companies scale and adapt to digital shifts — reliably and quickly.
+      </p>
+      <img src="https://cdn.pixabay.com/photo/2016/11/08/05/26/business-1805492_1280.jpg" alt="Business Team Meeting">
+    </section>
+
+    <section>
+      <h2>Core Values</h2>
+      <p>Our values are the DNA of our company culture. They guide every decision and every partnership:</p>
+      <ul>
+        <li><strong>Trust:</strong> We build long-term relationships through transparency and reliability.</li>
+        <li><strong>Agility:</strong> In a fast-changing world, we adapt quickly and efficiently.</li>
+        <li><strong>Innovation:</strong> We embrace new technologies to deliver smarter solutions.</li>
+        <li><strong>Excellence:</strong> We go above and beyond to deliver exceptional value.</li>
+      </ul>
+      <img src="https://cdn.pixabay.com/photo/2018/03/01/14/50/social-media-3190194_1280.jpg" alt="Company Values">
+    </section>
+
+    <section>
+      <h2>Future Vision</h2>
+      <p>
+        Our goal is to become the most trusted name in tech consulting and staffing by delivering value-driven results. We’re investing in AI, cloud, and automation — and in people — to lead the next wave of IT transformation.
+      </p>
+      <img src="https://cdn.pixabay.com/photo/2021/04/15/10/12/artificial-intelligence-6188887_1280.jpg" alt="Technology Vision">
+    </section>
+  </div>
+
+</body>
+</html>
