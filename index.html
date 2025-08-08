@@ -226,7 +226,73 @@
         margin-bottom: 20px;
       }
     }
-  </style>
+  
+/* Hero Carousel Styles */
+.hero-carousel {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  position: relative;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.carousel-text {
+  text-align: center;
+  color: #fff;
+  max-width: 700px;
+  padding: 20px;
+  animation: fadeInUp 1s ease both;
+}
+
+.carousel-text h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.carousel-text p {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+
+.carousel-slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+.carousel-text {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+</style>
 </head>
 <body>
 
@@ -248,11 +314,32 @@
   </ul>
 </nav>
 
-  <header class="hero">
-    <h1>Empowering Your Workforce, One Placement at a Time</h1>
-    <p>Top-tier IT staffing and smart workforce solutions at your service.</p>
-    <a href="contact.html" class="btn">Get Started</a>
-  </header>
+  
+<!-- Hero Carousel -->
+<div class="hero-carousel">
+  <div class="carousel-slide active" style="background-image: url('https://images.pexels.com/photos/1181316/pexels-photo-1181316.jpeg');">
+    <div class="carousel-text">
+      <h1>Tap into Top IT Talent</h1>
+      <p>Connecting you with the right professionals for every challenge.</p>
+      <a href="contact.html" class="btn">Get Started</a>
+    </div>
+  </div>
+  <div class="carousel-slide" style="background-image: url('https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg');">
+    <div class="carousel-text">
+      <h1>Innovating Your Digital Future</h1>
+      <p>Empowering businesses with smart technology solutions.</p>
+      <a href="services.html" class="btn">Discover More</a>
+    </div>
+  </div>
+  <div class="carousel-slide" style="background-image: url('https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg');">
+    <div class="carousel-text">
+      <h1>Seamless Cloud Integration</h1>
+      <p>Secure, scalable, and tailored to your business needs.</p>
+      <a href="services.html" class="btn">Learn More</a>
+    </div>
+  </div>
+</div>
+
 
   <section class="image-text-section">
     <div class="item"><img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg" alt="IT Staffing" /><div class="item-content"><h3>Tailored IT Staffing Solutions</h3><p>We connect your business with the top 5% of tech talent to meet your project and business goals.</p></div></div>
@@ -297,5 +384,24 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>AOS.init({ duration: 1000 });</script>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+  });
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+setInterval(nextSlide, 5000);
+</script>
+
 </body>
 </html>
