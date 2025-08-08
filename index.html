@@ -1,448 +1,915 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>TapNex Technologies</title>
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/SenTineL-iwnl/tapnex/main/Geometric%20Logo%20with%20Navy%20and%20Silver.png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
   <style>
-    /* === your original base styles (kept intact & slightly reorganized) === */
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    body { background: #ffffff; color: #333; line-height: 1.6; }
-
+    :root {
+      --primary: #0066ff;
+      --dark: #001f3f;
+      --light: #f8fafc;
+      --accent: #00d4ff
+    }
+    .modern-btn {
+      padding: 12px 28px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 50px;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      transition: all .3s;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(0,102,255,.3)
+    }
+    .modern-btn:hover {
+      background: #0055dd;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,102,255,.4)
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif
+    }
+    body {
+      background: #fff;
+      color: #333;
+      line-height: 1.6
+    }
     nav {
-      background: #001f3f;
-      padding: 20px 40px;
+      background: var(--dark);
+      padding: 15px 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(0,0,0,.1);
+      height: 70px;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      height: 100%;
+    }
+    .logo-container img {
+      height: 42px;
+      width: auto;
+      display: block;
+    }
+    .logo-text {
+      color: white;
+      font-weight: 600;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+    nav ul {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      list-style: none;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    nav a {
       color: #fff;
-      z-index: 2000;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: .95rem;
+      position: relative;
+      padding: 6px 0;
+      transition: color 0.3s;
+      height: 100%;
+      display: flex;
+      align-items: center;
     }
-    .logo-container { display:flex; align-items:center; }
-    .logo-container img { height:50px; margin-right:10px; }
-    nav ul { list-style:none; display:flex; gap:18px; }
-    nav ul li { margin:0; }
-    nav ul li a { color:#fff; text-decoration:none; font-weight:600; padding:6px 8px; }
-
-    /* === Carousel (subtle fade) === */
-    .hero-carousel { position: relative; height: 100vh; overflow: hidden; }
+    nav a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      bottom: 0;
+      left: 0;
+      transition: width .3s
+    }
+    nav a:hover:after {
+      width: 100%
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    .contact-btn {
+      background: var(--primary);
+      padding: 8px 20px;
+      border-radius: 4px;
+      margin-left: 10px;
+    }
+    .contact-btn:hover {
+      background: #0055dd;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--dark);
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 4px;
+      padding: 10px 0;
+    }
+    .dropdown-menu a {
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown-menu a:hover {
+      background: rgba(255,255,255,0.1);
+    }
+    nav ul li:hover .dropdown-menu {
+      display: block;
+    }
+    .hero-carousel {
+      height: 70vh;
+      min-height: 500px;
+      position: relative;
+      overflow: hidden
+    }
     .carousel-slide {
-      position:absolute;
-      inset:0;
-      background-size:cover;
-      background-position:center;
-      opacity:0;
-      transition: opacity 1.2s ease-in-out;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center
     }
-    .carousel-slide.active { opacity:1; z-index:1; }
-
-    /* dark overlay for readability */
     .carousel-slide::before {
-      content:"";
-      position:absolute;
-      inset:0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.55));
-      z-index:0;
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg,rgba(0,31,63,.8) 0%,rgba(0,31,63,.4) 100%)
     }
-
+    .carousel-slide.active {
+      opacity: 1
+    }
     .carousel-text {
-      position: relative; /* on top of overlay */
+      max-width: 1200px;
+      padding: 0 5%;
+      position: relative;
       z-index: 2;
       color: #fff;
-      text-align:center;
-      max-width:900px;
-      padding:24px;
-      animation: fadeInUp .9s ease;
+      text-align: left;
     }
-    .carousel-text h1 { font-size: 3rem; margin-bottom:8px; line-height:1.02; }
-    .carousel-text .subline { color:#dbeeff; font-size:1.05rem; margin-bottom:10px; display:block; }
-    .carousel-text p { font-size:1.1rem; margin-bottom:16px; color:#e8f2ff; }
-
-    .btn {
-      padding: 12px 28px;
-      background: #007bff;
+    .carousel-text h1 {
+      font-size: 2.8rem;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      font-weight: 700;
+      animation: fadeInUp 1s ease;
+    }
+    .carousel-text p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin-bottom: 28px;
+      opacity: .9;
+      animation: fadeInUp 1s ease 0.3s forwards;
+      opacity: 0;
+    }
+    .carousel-text .modern-btn {
+      animation: fadeInUp 1s ease 0.6s forwards;
+      opacity: 0;
+      cursor: pointer;
+      z-index: 10;
+      position: relative;
+    }
+    .carousel-indicators {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 10;
+    }
+    .carousel-indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .carousel-indicator.active {
+      background: white;
+      transform: scale(1.2);
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+      position: relative;
+      display: inline-block
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--primary)
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+      gap: 30px;
+      margin-top: 40px
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,.05);
+      transition: transform .3s,box-shadow .3s
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0,0,0,.1)
+    }
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover
+    }
+    .card-content {
+      padding: 28px
+    }
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px
+    }
+    .card p {
+      margin-bottom: 20px;
+      color: #666
+    }
+    
+    /* Industries Section Styles */
+    .industries {
+      padding: 80px 5%;
+      background-color: #f9fbfe;
+    }
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+    .industry-card {
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+    .industry-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    .industry-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary);
+      border-radius: 50%;
       color: white;
+      font-size: 1.8rem;
+    }
+    .industry-card h3 {
+      color: var(--dark);
+      margin-bottom: 15px;
+    }
+    .industry-card p {
+      color: #666;
+      font-size: 0.95rem;
+    }
+    
+    .testimonials {
+      background: var(--light);
+      padding: 80px 5%
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+      gap: 30px
+    }
+    .testimonial-card {
+      padding: 30px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.03)
+    }
+    .testimonial-card p {
+      font-style: italic;
+      margin-bottom: 20px;
+      position: relative
+    }
+    .testimonial-card p:before {
+      content: '"';
+      font-size: 4rem;
+      position: absolute;
+      opacity: .1;
+      top: -20px;
+      left: -10px
+    }
+    .testimonial-author {
+      font-weight: 600
+    }
+    footer {
+      background: var(--dark);
+      color: #fff;
+      padding: 60px 5% 30px
+    }
+    .footer-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 50px
+    }
+    .footer-brand {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 25px
+    }
+    .footer-brand img {
+      height: 50px
+    }
+    .footer-brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .footer-company-name {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: white;
+      line-height: 1.2;
+    }
+    .footer-company-tagline {
+      font-size: 0.9rem;
+      color: var(--accent);
+      font-weight: 400;
+      margin-top: 5px;
+      margin-left: 5px;
+    }
+    .quick-links h4,.social h4 {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px
+    }
+    .quick-links h4:after,.social h4:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--accent)
+    }
+    .quick-links ul {
+      list-style: none
+    }
+    .quick-links li {
+      margin-bottom: 12px
+    }
+    .quick-links a {
+      color: #cbdbe9;
       text-decoration: none;
-      border-radius: 6px;
-      font-size: 1.05rem;
-      display:inline-block;
-      border: none;
+      transition: color .3s;
+      display: flex;
+      align-items: center;
+      gap: 10px
+    }
+    .quick-links a:hover {
+      color: var(--accent)
+    }
+    .social-links {
+      display: flex;
+      gap: 20px
+    }
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.1);
+      transition: all .3s
+    }
+    .social-links a:hover {
+      background: var(--accent);
+      transform: translateY(-3px)
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      color: rgba(255,255,255,.6);
+      font-size: .9rem
+    }
+    
+    /* Popup Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.7);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 30px;
+      border-radius: 12px;
+      width: 80%;
+      max-width: 700px;
+      box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+      position: relative;
+    }
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #aaa;
       cursor: pointer;
     }
-    .btn:hover { background:#0056b3; }
-
-    @keyframes fadeInUp {
-      from { opacity:0; transform: translateY(12px); }
-      to { opacity:1; transform: translateY(0); }
+    .close-btn:hover {
+      color: var(--dark);
     }
-
-    /* === Rest of your original page styles (kept intact) === */
-    section { padding: 80px 20px; max-width:1200px; margin:auto; }
-    .image-text-section { display:flex; flex-direction:column; gap:60px; }
-    .item {
-      display:flex; flex-direction:row; align-items:center;
-      background:#f9f9f9; border-radius:10px; overflow:hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: transform 0.3s;
+    .modal-title {
+      color: var(--primary);
+      margin-bottom: 20px;
     }
-    .item:nth-child(even) { flex-direction: row-reverse; }
-    .item:hover { transform: translateY(-5px); }
-    .item img { width:50%; height:300px; object-fit:cover; }
-    .item-content { padding:40px; width:50%; }
-    .item-content h3 { margin-bottom:10px; font-size:1.5rem; }
-    .item-content p { font-size:1rem; color:#333; }
-
-    .testimonials { background:#f0f4f8; padding:60px 20px; text-align:center; }
-    .testimonial { max-width:700px; margin:20px auto; font-style:italic; font-size:1.1rem; line-height:1.8; }
-
-    footer { background-color:#001f3f; color:#fff; padding:60px 20px 30px; }
-    footer .footer-container { max-width:1200px; margin:auto; display:flex; flex-wrap:wrap; justify-content:space-between; gap:40px; }
-    footer .footer-section { flex:1 1 250px; }
-    footer .footer-section ul { list-style:none; padding:0; }
-    footer .footer-section ul li a { color:#ccc; text-decoration:none; display:block; margin:6px 0; font-size:14px; }
-    footer .bottom-note { text-align:center; padding-top:30px; font-size:13px; color:#aaa; border-top:1px solid #333; margin-top:40px; }
-
-    /* === Read More button (inline, not a link) === */
-    .read-more-btn {
-      display:inline-block;
-      margin-top:12px;
-      padding:8px 14px;
-      font-weight:600;
-      border-radius:6px;
-      border:none;
-      background:#007bff;
-      color:white;
-      cursor:pointer;
+    .modal-body {
+      line-height: 1.6;
+      color: #555;
     }
-    .read-more-btn:hover { background:#0056b3; }
-
-    /* === Modals: centered, larger, scrollable if required === */
-    .modal {
-      display:none; /* toggled via .open class */
-      position:fixed; inset:0;
-      z-index:3000;
-      background: rgba(0,0,0,0.75);
-      align-items:center; justify-content:center;
-      padding:20px;
-      -webkit-overflow-scrolling: touch;
-    }
-    .modal.open { display:flex; }
-
-    .modal-dialog {
-      background:#fff;
-      width:100%;
-      max-width:800px;
-      border-radius:10px;
-      padding:28px;
-      max-height:86vh;
-      overflow:auto;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.35);
-      position:relative;
-    }
-    .modal-dialog h3 { margin-top:0; font-size:1.5rem; }
-    .modal-dialog p { color:#333; line-height:1.6; margin-bottom:0; }
-
-    .modal-close {
-      position:absolute;
-      top:12px; right:12px;
-      width:40px; height:40px;
-      border-radius:8px;
-      border:none;
-      background:transparent;
-      font-size:28px;
-      color:#666;
-      cursor:pointer;
-    }
-    .modal-close:hover { color:#000; }
-
-    /* small screens tweaks */
-    @media (max-width:768px) {
-      .carousel-text h1 { font-size:2rem; }
-      .carousel-text p { font-size:1rem; }
-      .item { flex-direction:column !important; }
-      .item img, .item-content { width:100%; height:auto; }
-      .modal-dialog { padding:18px; max-width: 94%; max-height: 90vh; }
+    
+    @media (max-width: 768px) {
+      nav {
+        padding: 15px 5%;
+        flex-direction: column;
+        gap: 15px;
+        height: auto;
+      }
+      .logo-container {
+        height: auto;
+      }
+      .logo-text {
+        height: auto;
+      }
+      nav ul {
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav ul li {
+        height: auto;
+      }
+      nav a {
+        height: auto;
+      }
+      .contact-btn {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+      .dropdown-menu {
+        position: static;
+        display: none;
+        width: 100%;
+        box-shadow: none;
+      }
+      .hero-carousel {
+        height: 60vh;
+        min-height: 400px;
+      }
+      .carousel-text h1 {
+        font-size: 2rem
+      }
+      .carousel-text p {
+        font-size: 1rem
+      }
+      .section-title {
+        font-size: 1.8rem
+      }
+      .card-grid {
+        grid-template-columns: 1fr
+      }
+      .industries-grid {
+        grid-template-columns: 1fr;
+      }
+      .modal-content {
+        width: 90%;
+        margin: 20% auto;
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
-
-<nav>
-  <div class="logo-container">
-    <a href="index.html" style="display:flex; align-items:center; text-decoration:none; color:inherit;">
-      <img src="https://raw.githubusercontent.com/SenTineL-iwnl/tapnex/main/Geometric%20Logo%20with%20Navy%20and%20Silver.png" alt="TapNex Logo">
-      <h2>TapNex Technologies</h2>
-    </a>
-  </div>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="careers.html">Careers</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="blog1.html">Blog 1</a></li>
-    <li><a href="blog2.html">Blog 2</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- HERO: subtle fade carousel (kept inline, pure CSS + tiny JS rotation) -->
-<div class="hero-carousel" id="heroCarousel">
-  <div class="carousel-slide active" style="background-image: url('https://images.pexels.com/photos/1181316/pexels-photo-1181316.jpeg');">
-    <div class="carousel-text">
-      <h1>Tap into Top IT Talent</h1>
-      <span class="subline">We match experts to your vision for success.</span>
-      <p>Connecting you with the right professionals for every challenge.</p>
-      <button class="btn" onclick="location.href='contact.html'">Get Started</button>
+  <nav>
+    <div class="logo-container">
+      <a href="index.html" style="display: flex; align-items: center; height: 100%;">
+        <img src="https://raw.githubusercontent.com/SenTineL-iwnl/tapnex/main/Geometric%20Logo%20with%20Navy%20and%20Silver.png" alt="TapNex Logo">
+        <span class="logo-text">TapNex Technologies</span>
+      </a>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li>
+        <a href="#">Blog</a>
+        <div class="dropdown-menu">
+          <a href="blog1.html">Blog 1</a>
+          <a href="blog2.html">Blog 2</a>
+        </div>
+      </li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
+    </ul>
+  </nav>
+  
+  <div class="hero-carousel">
+    <div class="carousel-slide active" style="background-image:url('https://images.pexels.com/photos/1181316/pexels-photo-1181316.jpeg')">
+      <div class="carousel-text">
+        <h1>Tap into Top IT Talent</h1>
+        <p>Access pre-vetted technology professionals perfectly matched to your requirements and company culture.</p>
+        <button class="modern-btn" onclick="window.location.href='contact.html'">Get Started</button>
+      </div>
+    </div>
+    <div class="carousel-slide" style="background-image:url('https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg')">
+      <div class="carousel-text">
+        <h1>Expert Technology Staffing Solutions</h1>
+        <p>Find the perfect tech talent for your team with our specialized recruitment services.</p>
+        <button class="modern-btn" onclick="window.location.href='contact.html'">Explore Talent</button>
+      </div>
+    </div>
+    <div class="carousel-slide" style="background-image:url('https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg')">
+      <div class="carousel-text">
+        <h1>Specialized IT Recruitment</h1>
+        <p>We connect you with niche technology experts for your most challenging staffing needs.</p>
+        <button class="modern-btn" onclick="window.location.href='contact.html'">Learn More</button>
+      </div>
+    </div>
+    <div class="carousel-indicators">
+      <div class="carousel-indicator active" data-slide="0"></div>
+      <div class="carousel-indicator" data-slide="1"></div>
+      <div class="carousel-indicator" data-slide="2"></div>
     </div>
   </div>
-
-  <div class="carousel-slide" style="background-image: url('https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg');">
-    <div class="carousel-text">
-      <h1>Innovating Your Digital Future</h1>
-      <span class="subline">Where creativity meets cutting-edge technology.</span>
-      <p>Empowering businesses with smart technology solutions.</p>
-      <button class="btn" onclick="location.href='services.html'">Discover More</button>
+  
+  <section style="padding:80px 5%">
+    <h2 class="section-title">Our Services</h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg" alt="IT Staffing">
+        <div class="card-content">
+          <h3>Permanent IT Staffing</h3>
+          <p>Direct-hire solutions for long-term technology talent needs with comprehensive vetting and cultural fit assessment.</p>
+          <button class="modern-btn learn-more-btn" style="background:#fff;color:var(--primary);border:1px solid var(--primary)" data-service="staffing">Learn More</button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg" alt="Consulting">
+        <div class="card-content">
+          <h3>Contract Staffing</h3>
+          <p>Flexible staffing solutions with highly skilled IT professionals for project-based or temporary needs.</p>
+          <button class="modern-btn learn-more-btn" style="background:#fff;color:var(--primary);border:1px solid var(--primary)" data-service="consulting">Learn More</button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg" alt="Contract-to-Hire">
+        <div class="card-content">
+          <h3>Contract-to-Hire</h3>
+          <p>Try before you buy - evaluate IT professionals before making a permanent hiring decision.</p>
+          <button class="modern-btn learn-more-btn" style="background:#fff;color:var(--primary);border:1px solid var(--primary)" data-service="contract">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Industries We Serve Section -->
+  <section class="industries">
+    <div class="container">
+      <h2 class="section-title">Industries We Serve</h2>
+      <div class="industries-grid">
+        <div class="industry-card">
+          <div class="industry-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+          </div>
+          <h3>Technology</h3>
+          <p>We provide specialized IT consultants including software architects, DevOps engineers, cybersecurity experts, and AI/ML specialists for tech companies.</p>
+        </div>
+        <div class="industry-card">
+          <div class="industry-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          </div>
+          <h3>Finance & Banking</h3>
+          <p>Our financial consultants include FinTech developers, blockchain experts, financial systems analysts, and compliance specialists with deep industry knowledge.</p>
+        </div>
+        <div class="industry-card">
+          <div class="industry-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+          </div>
+          <h3>Retail & E-commerce</h3>
+          <p>We supply retail technology consultants including e-commerce platform specialists, POS system experts, and omnichannel integration consultants.</p>
+        </div>
+        <div class="industry-card">
+          <div class="industry-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          </div>
+          <h3>Healthcare</h3>
+          <p>Our healthcare IT consultants include EHR/EMR specialists, healthcare data analysts, telemedicine experts, and HIPAA compliance officers.</p>
+        </div>
+        <div class="industry-card">
+          <div class="industry-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+          </div>
+          <h3>Manufacturing</h3>
+          <p>We provide Industry 4.0 consultants including IoT specialists, automation engineers, supply chain optimization experts, and MES system architects.</p>
+        </div>
+        <div class="industry-card">
+          <div class="industry-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+          </div>
+          <h3>Education</h3>
+          <p>Our education technology consultants include LMS specialists, edtech developers, instructional design technologists, and student information system experts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="testimonials">
+    <h2 class="section-title" style="color:var(--dark)">Client Success Stories</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p>TapNex transformed our technology team. Their consultants integrated seamlessly and delivered exceptional results.</p>
+        <div class="testimonial-author">— Tech Enterprise Inc.</div>
+      </div>
+      <div class="testimonial-card">
+        <p>Their staffing process found us perfect candidates in half the time of other agencies.</p>
+        <div class="testimonial-author">— InnovateCo</div>
+      </div>
+      <div class="testimonial-card">
+        <p>We've filled 15 critical tech positions through TapNex with a 95% retention rate after 12 months.</p>
+        <div class="testimonial-author">— Financial Services Corp</div>
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    <div class="footer-container">
+      <div>
+        <div class="footer-brand">
+          <img src="https://raw.githubusercontent.com/SenTineL-iwnl/tapnex/main/Geometric%20Logo%20with%20Navy%20and%20Silver.png" alt="Logo">
+          <div class="footer-brand-text">
+            <span class="footer-company-name">TapNex Technologies</span>
+            <span class="footer-company-tagline">Tap into Top IT Talent</span>
+          </div>
+        </div>
+        <p style="color:#a3c5e0;margin-top:20px;line-height:1.6">Empowering businesses through innovative technology staffing solutions.</p>
+      </div>
+      <div class="quick-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="social">
+        <h4>Connect With Us</h4>
+        <div class="social-links">
+          <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.48 17.52 2 12 2C6.48 2 2 6.48 2 12C2 16.84 5.44 20.87 10 21.8V15H8V12H10V9.5C10 7.57 11.57 6 13.5 6H16V9H14C13.45 9 13 9.45 13 10V12H16V15H13V21.95C18.05 21.45 22 17.19 22 12Z" fill="white"/></svg></a>
+          <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 3H5C3.895 3 3 3.895 3 5V19C3 20.105 3.895 21 5 21H19C20.105 21 21 20.105 21 19V5C21 3.895 20.105 3 19 3ZM8 18H5V10H8V18ZM6.5 8.309C5.53 8.309 4.75 7.53 4.75 6.561C4.75 5.591 5.53 4.812 6.5 4.812C7.47 4.812 8.25 5.591 8.25 6.561C8.25 7.53 7.47 8.309 6.5 8.309ZM19 18H16V13.396C16 11.142 13.751 11.2 13.5 11.2C13.25 11.2 11 11.142 11 13.396V18H8V10H11V11.765C11.83 10.456 13.6 10.2 14.5 10.2C16.7 10.2 19 11.5 19 13.896V18Z" fill="white"/></svg></a>
+          <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.46 6C21.69 6.35 20.86 6.58 20 6.69C20.88 6.16 21.56 5.32 21.88 4.31C21.05 4.81 20.13 5.16 19.16 5.36C18.37 4.5 17.26 4 16 4C13.65 4 11.73 5.92 11.73 8.29C11.73 8.63 11.77 8.96 11.84 9.27C8.28 9.09 5.11 7.38 3 4.79C2.63 5.42 2.42 6.16 2.42 6.94C2.42 8.43 3.17 9.75 4.33 10.5C3.62 10.5 2.96 10.3 2.38 10C2.38 10 2.38 10 2.38 10.03C2.38 12.11 3.86 13.85 5.82 14.24C5.46 14.34 5.08 14.39 4.69 14.39C4.42 14.39 4.15 14.36 3.89 14.31C4.43 16 6 17.26 7.89 17.29C6.43 18.45 4.58 19.13 2.56 19.13C2.22 19.13 1.88 19.11 1.54 19.07C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79C20.33 8.6 20.33 8.42 20.32 8.23C21.16 7.63 21.88 6.87 22.46 6Z" fill="white"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">© 2025 TapNex Technologies. All rights reserved.</div>
+  </footer>
+  
+  <!-- Modal Popups -->
+  <div id="staffingModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h3 class="modal-title">Permanent IT Staffing</h3>
+      <div class="modal-body">
+        <p>Our Permanent IT Staffing service connects you with pre-vetted technology professionals for direct hire positions. We go beyond just skills matching to ensure the right cultural and technical fit for your team.</p>
+        <p><strong>Key Features:</strong></p>
+        <ul>
+          <li>Comprehensive technical vetting including coding tests and system design interviews</li>
+          <li>Cultural fit evaluation tailored to your organization</li>
+          <li>Specialized recruitment for niche technologies and hard-to-fill roles</li>
+          <li>90-day replacement guarantee for all permanent placements</li>
+          <li>Ongoing support during the onboarding process</li>
+        </ul>
+        <p>Whether you need a single specialist or an entire team, we can deliver qualified candidates within days, not weeks.</p>
+      </div>
     </div>
   </div>
-
-  <div class="carousel-slide" style="background-image: url('https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg');">
-    <div class="carousel-text">
-      <h1>Seamless Cloud Integration</h1>
-      <span class="subline">Effortless, reliable, and future-proof.</span>
-      <p>Secure, scalable, and tailored to your business needs.</p>
-      <button class="btn" onclick="location.href='services.html'">Learn More</button>
+  
+  <div id="consultingModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h3 class="modal-title">Contract Staffing</h3>
+      <div class="modal-body">
+        <p>Our Contract Staffing solutions provide flexible access to top IT talent for your project-based or temporary needs. All contractors are thoroughly vetted and ready to hit the ground running.</p>
+        <p><strong>Our Approach:</strong></p>
+        <ul>
+          <li>Rapid deployment of pre-screened contract professionals</li>
+          <li>Specialized talent for short-term projects and interim needs</li>
+          <li>Full compliance with employment laws and regulations</li>
+          <li>Dedicated account management for continuous support</li>
+          <li>Scalable solutions that grow with your project requirements</li>
+        </ul>
+        <p>We maintain a deep bench of contract professionals across all major technologies and specialties.</p>
+      </div>
     </div>
   </div>
-</div>
-
-<section class="image-text-section">
-  <!-- Item 1 -->
-  <div class="item">
-    <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg" alt="IT Staffing" loading="lazy"/>
-    <div class="item-content">
-      <h3>Tailored IT Staffing Solutions</h3>
-      <!-- short preview -->
-      <p>We match businesses with highly skilled tech professionals—fast. Our screening ensures technical fit and cultural alignment.</p>
-      <button class="read-more-btn" data-modal="modal_tailored">Read More</button>
+  
+  <div id="contractModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h3 class="modal-title">Contract-to-Hire</h3>
+      <div class="modal-body">
+        <p>Our Contract-to-Hire solution gives you the opportunity to evaluate IT professionals in your work environment before making a permanent hiring decision.</p>
+        <p><strong>Key Benefits:</strong></p>
+        <ul>
+          <li>Low-risk way to assess skills and cultural fit</li>
+          <li>Seamless transition to permanent employment</li>
+          <li>All contract periods count toward benefits eligibility</li>
+          <li>Flexible conversion timelines to meet your needs</li>
+          <li>Reduced hiring risk with our satisfaction guarantee</li>
+        </ul>
+        <p>This model is ideal for companies that want to "try before they buy" when bringing on new technical team members.</p>
+      </div>
     </div>
   </div>
-
-  <!-- Item 2 -->
-  <div class="item">
-    <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg" alt="Consulting" loading="lazy"/>
-    <div class="item-content">
-      <h3>Strategic IT Consulting</h3>
-      <p>We design and execute technology roadmaps that align with your business goals and reduce operational friction.</p>
-      <button class="read-more-btn" data-modal="modal_consulting">Read More</button>
-    </div>
-  </div>
-
-  <!-- Item 3 -->
-  <div class="item">
-    <img src="https://images.pexels.com/photos/1181314/pexels-photo-1181314.jpeg" alt="Remote Team" loading="lazy"/>
-    <div class="item-content">
-      <h3>Remote Workforce Setup</h3>
-      <p>Build and manage remote teams with efficient onboarding, secure tools, and transparent communication workflows.</p>
-      <button class="read-more-btn" data-modal="modal_remote">Read More</button>
-    </div>
-  </div>
-
-  <!-- Item 4 -->
-  <div class="item">
-    <img src="https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg" alt="Cloud Services" loading="lazy"/>
-    <div class="item-content">
-      <h3>Cloud-Ready Infrastructure</h3>
-      <p>Scalable, secure cloud deployments designed to support growth and reduce downtime while protecting data.</p>
-      <button class="read-more-btn" data-modal="modal_cloud">Read More</button>
-    </div>
-  </div>
-
-  <!-- Item 5 -->
-  <div class="item">
-    <img src="https://images.pexels.com/photos/3182759/pexels-photo-3182759.jpeg" alt="Innovation" loading="lazy"/>
-    <div class="item-content">
-      <h3>Innovation and Agility</h3>
-      <p>We embed agile practices and fresh thinking so your business adapts quickly to new opportunities.</p>
-      <button class="read-more-btn" data-modal="modal_innovation">Read More</button>
-    </div>
-  </div>
-</section>
-
-<!-- Modals (one per item) -->
-<!-- Modal: Tailored IT Staffing Solutions -->
-<div id="modal_tailored" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal_tailored_title">
-  <div class="modal-dialog" role="document">
-    <button class="modal-close" aria-label="Close" title="Close">&times;</button>
-    <h3 id="modal_tailored_title">Tailored IT Staffing Solutions</h3>
-    <p>
-      Our staffing services are customized to match your business goals with the perfect tech talent. We rigorously vet candidates to ensure they
-      possess the right technical skills, industry experience, and cultural fit. Whether you need short-term project specialists, contract-to-hire
-      consultants, or long-term placements, we adapt our sourcing, screening and interviewing to deliver the best match. We also support onboarding
-      and follow-up to ensure a smooth integration into your teams.
-    </p>
-  </div>
-</div>
-
-<!-- Modal: Strategic IT Consulting -->
-<div id="modal_consulting" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal_consulting_title">
-  <div class="modal-dialog" role="document">
-    <button class="modal-close" aria-label="Close" title="Close">&times;</button>
-    <h3 id="modal_consulting_title">Strategic IT Consulting</h3>
-    <p>
-      Our consulting team partners with you to design and implement practical technology strategies that drive measurable business growth.
-      From digital transformation and architecture design to workflow automation and vendor selection, we evaluate your current systems, identify
-      improvement opportunities, and deliver a staged roadmap for sustainable outcomes. We emphasize measurable KPIs and realistic timelines.
-    </p>
-  </div>
-</div>
-
-<!-- Modal: Remote Workforce Setup -->
-<div id="modal_remote" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal_remote_title">
-  <div class="modal-dialog" role="document">
-    <button class="modal-close" aria-label="Close" title="Close">&times;</button>
-    <h3 id="modal_remote_title">Remote Workforce Setup</h3>
-    <p>
-      We help you build and scale effective remote teams — from sourcing and onboarding to tooling and process design. We focus on reliable
-      communication patterns, performance tracking, security-first setups, and cultural practices that keep distributed teams productive and engaged.
-      Our programs include role-specific training and ongoing support to ensure remote success.
-    </p>
-  </div>
-</div>
-
-<!-- Modal: Cloud-Ready Infrastructure -->
-<div id="modal_cloud" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal_cloud_title">
-  <div class="modal-dialog" role="document">
-    <button class="modal-close" aria-label="Close" title="Close">&times;</button>
-    <h3 id="modal_cloud_title">Cloud-Ready Infrastructure</h3>
-    <p>
-      Our cloud solutions deliver scalability, resilience and compliance across public, private and hybrid environments. We evaluate your
-      workloads, create a secure migration plan, and optimize cloud costs while ensuring high availability and automated backups. Whether you're
-      moving legacy systems or fine-tuning multi-cloud architectures, we minimize downtime and deliver measurable performance improvements.
-    </p>
-  </div>
-</div>
-
-<!-- Modal: Innovation and Agility -->
-<div id="modal_innovation" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal_innovation_title">
-  <div class="modal-dialog" role="document">
-    <button class="modal-close" aria-label="Close" title="Close">&times;</button>
-    <h3 id="modal_innovation_title">Innovation and Agility</h3>
-    <p>
-      We integrate innovation into your product and operational strategies using agile practices, rapid prototyping and practical roadmaps. Our
-      teams blend modern tools with human-centered design to reduce time-to-market and help you respond to changing customer needs faster.
-      Continuous improvement, experiments, and data-driven decisions are core to our approach.
-    </p>
-  </div>
-</div>
-
-<section class="testimonials">
-  <h2>What Our Clients Say</h2>
-  <div class="testimonial">“TapNex Technologies provided exceptional staffing support during our critical transition phase. Their consultants were top-notch and dependable.” – Tech Enterprise</div>
-  <div class="testimonial">“A highly professional IT partner. We rely on TapNex for consistent, quality talent and scalable workforce solutions.” – GlobalSoft Inc.</div>
-</section>
-
-<footer>
-  <div class="footer-container">
-    <div class="footer-section">
-      <img src="https://raw.githubusercontent.com/SenTineL-iwnl/tapnex/main/Geometric%20Logo%20with%20Navy%20and%20Silver.png" alt="TapNex Logo" style="height:50px;margin-bottom:20px;">
-      <p>Empowering your workforce through smart, scalable IT staffing solutions.</p>
-    </div>
-    <div class="footer-section">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-section">
-      <h4>Follow Us</h4>
-      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" width="24"></a>
-      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="LinkedIn" width="24"></a>
-      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Twitter" width="24"></a>
-    </div>
-  </div>
-  <div class="bottom-note">&copy; 2025 TapNex Technologies. All rights reserved.</div>
-</footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-  AOS.init({ duration: 1000 });
-
-  // SIMPLE carousel rotation (fade)
-  (function() {
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+    
+    // Enhanced Carousel Functionality
+    let currentSlide = 0;
     const slides = document.querySelectorAll('.carousel-slide');
-    if (!slides.length) return;
-    let i = 0;
-    const show = idx => {
-      slides.forEach((s, k) => s.classList.toggle('active', k === idx));
+    const indicators = document.querySelectorAll('.carousel-indicator');
+    let slideInterval;
+    
+    function showSlide(n) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      indicators.forEach(indicator => indicator.classList.remove('active'));
+      currentSlide = (n + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+      indicators[currentSlide].classList.add('active');
+    }
+    
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+    
+    function startCarousel() {
+      slideInterval = setInterval(nextSlide, 5000);
+    }
+    
+    function stopCarousel() {
+      clearInterval(slideInterval);
+    }
+    
+    // Initialize carousel
+    showSlide(0);
+    startCarousel();
+    
+    // Pause on hover
+    const carousel = document.querySelector('.hero-carousel');
+    carousel.addEventListener('mouseenter', stopCarousel);
+    carousel.addEventListener('mouseleave', startCarousel);
+    
+    // Click indicators to navigate
+    indicators.forEach(indicator => {
+      indicator.addEventListener('click', function() {
+        const slideIndex = parseInt(this.getAttribute('data-slide'));
+        showSlide(slideIndex);
+      });
+    });
+    
+    // Modal functionality
+    const modals = {
+      staffing: document.getElementById('staffingModal'),
+      consulting: document.getElementById('consultingModal'),
+      contract: document.getElementById('contractModal')
     };
-    setInterval(() => {
-      i = (i + 1) % slides.length;
-      show(i);
-    }, 5000);
-  })();
-
-  // Modal handling
-  (function() {
-    const openButtons = document.querySelectorAll('.read-more-btn');
-    const closeButtons = document.querySelectorAll('.modal-close');
-
-    openButtons.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const target = btn.getAttribute('data-modal');
-        const modal = document.getElementById(target);
-        if (!modal) return;
-        modal.classList.add('open');
-        // prevent background scroll while modal open
-        document.documentElement.style.overflow = 'hidden';
-        document.body.style.overflow = 'hidden';
-        // focus for accessibility
-        const focusable = modal.querySelector('.modal-dialog');
-        if (focusable) focusable.focus();
+    
+    const buttons = document.querySelectorAll('.learn-more-btn');
+    const closeBtns = document.querySelectorAll('.close-btn');
+    
+    buttons.forEach(button => {
+      button.addEventListener('click', function() {
+        const service = this.getAttribute('data-service');
+        modals[service].style.display = 'block';
       });
     });
-
-    closeButtons.forEach(cb => {
-      cb.addEventListener('click', (e) => {
-        const modal = cb.closest('.modal');
-        if (!modal) return;
-        modal.classList.remove('open');
-        document.documentElement.style.overflow = '';
-        document.body.style.overflow = '';
+    
+    closeBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        this.closest('.modal').style.display = 'none';
       });
     });
-
-    // close when clicking backdrop
-    document.querySelectorAll('.modal').forEach(modal => {
-      modal.addEventListener('click', (ev) => {
-        if (ev.target === modal) {
-          modal.classList.remove('open');
-          document.documentElement.style.overflow = '';
-          document.body.style.overflow = '';
-        }
-      });
-    });
-
-    // close on escape
-    document.addEventListener('keydown', (ev) => {
-      if (ev.key === 'Escape') {
-        document.querySelectorAll('.modal.open').forEach(m => {
-          m.classList.remove('open');
-        });
-        document.documentElement.style.overflow = '';
-        document.body.style.overflow = '';
+    
+    window.addEventListener('click', function(event) {
+      if (event.target.classList.contains('modal')) {
+        event.target.style.display = 'none';
       }
     });
-  })();
-</script>
+    
+    // Mobile menu toggle
+    function setupMobileMenu() {
+      if (window.innerWidth <= 768) {
+        const nav = document.querySelector('nav');
+        const navList = document.querySelector('nav ul');
+        const logoContainer = document.querySelector('.logo-container');
+        
+        const menuButton = document.createElement('button');
+        menuButton.innerHTML = '☰';
+        menuButton.style.background = 'none';
+        menuButton.style.border = 'none';
+        menuButton.style.color = 'white';
+        menuButton.style.fontSize = '1.5rem';
+        menuButton.style.cursor = 'pointer';
+        
+        nav.insertBefore(menuButton, navList);
+        navList.style.display = 'none';
+        
+        menuButton.addEventListener('click', function() {
+          if (navList.style.display === 'none' || navList.style.display === '') {
+            navList.style.display = 'flex';
+          } else {
+            navList.style.display = 'none';
+          }
+        });
+      }
+    }
+    
+    // Run on load and resize
+    window.addEventListener('load', setupMobileMenu);
+    window.addEventListener('resize', setupMobileMenu);
+  </script>
 </body>
 </html>
