@@ -201,6 +201,22 @@
       display: block;
     }
     
+    /* Mobile Menu Button */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.8rem;
+      cursor: pointer;
+      padding: 5px 10px;
+      transition: transform 0.3s ease;
+    }
+    
+    .mobile-menu-btn:hover {
+      transform: scale(1.1);
+    }
+    
     /* Services Hero Section */
     .services-hero {
       background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
@@ -623,12 +639,13 @@
         width: 100%;
         text-align: center;
         padding: 10px 0;
+        height: auto;
       }
       
       nav a {
         width: 100%;
         justify-content: center;
-        padding: 10px 0;
+        padding: 10px 20px;
       }
       
       .dropdown-menu {
@@ -636,24 +653,31 @@
         display: none;
         width: 100%;
         box-shadow: none;
-        background: rgba(0,0,0,0.1);
-        padding: 10px 0;
-        margin-top: 10px;
-      }
-      
-      nav ul li:hover .dropdown-menu {
-        display: none;
+        background: rgba(0,0,0,0.2);
+        padding: 0;
+        margin-top: 0;
+        border-radius: 0;
       }
       
       .dropdown-menu.active {
         display: block;
+        padding: 10px 0;
+      }
+      
+      .dropdown-menu a {
+        padding: 8px 20px 8px 40px;
+        font-size: 0.9rem;
       }
       
       .contact-btn {
         margin-left: 0;
-        margin-top: 0;
+        margin-top: 10px;
         width: auto;
         display: inline-block;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
       }
       
       .services-hero h1 {
@@ -719,6 +743,11 @@
         padding-left: 15px;
         padding-right: 15px;
       }
+      
+      .mobile-menu-btn {
+        font-size: 1.5rem;
+        padding: 5px;
+      }
     }
   </style>
 </head>
@@ -730,22 +759,22 @@
         <span class="logo-text">TapNex Technologies</span>
       </a>
     </div>
-   <ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="services.html">Services</a></li>
-  <li class="dropdown">
-    <a href="staffing-solutions.html">Staffing Solutions</a>
-    <div class="dropdown-menu">
-      <a href="services.html#permanent">Permanent Staffing</a>
-      <a href="services.html#contract">Contract Staffing</a>
-      <a href="services.html#cth">Contract-to-Hire</a>
-      <a href="services.html#executive">Executive Search</a>
-    </div>
-  </li>
-  <li><a href="about.html">About</a></li>
-  <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
-</ul>
-    <button class="mobile-menu-btn" style="display: none;">☰</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li class="dropdown">
+        <a href="staffing-solutions.html">Staffing Solutions</a>
+        <div class="dropdown-menu">
+          <a href="services.html#permanent">Permanent Staffing</a>
+          <a href="services.html#contract">Contract Staffing</a>
+          <a href="services.html#cth">Contract-to-Hire</a>
+          <a href="services.html#executive">Executive Search</a>
+        </div>
+      </li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
+    </ul>
+    <button class="mobile-menu-btn">☰</button>
   </nav>
   
   <section class="services-hero">
@@ -1044,60 +1073,102 @@
     });
     
     // Mobile menu functionality
-function setupMobileMenu() {
-  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-  const navList = document.querySelector('nav ul');
-  const dropdowns = document.querySelectorAll('.dropdown');
-  
-  if (window.innerWidth <= 768) {
-    if (!mobileMenuBtn) {
-      const newMenuBtn = document.createElement('button');
-      newMenuBtn.className = 'mobile-menu-btn';
-      newMenuBtn.innerHTML = '☰';
-      newMenuBtn.style.background = 'none';
-      newMenuBtn.style.border = 'none';
-      newMenuBtn.style.color = 'white';
-      newMenuBtn.style.fontSize = '1.5rem';
-      newMenuBtn.style.cursor = 'pointer';
-      newMenuBtn.style.display = 'block';
-      document.querySelector('nav').appendChild(newMenuBtn);
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+      const navList = document.querySelector('nav ul');
       
-      newMenuBtn.addEventListener('click', function() {
-        navList.classList.toggle('active');
-        this.innerHTML = navList.classList.contains('active') ? '✕' : '☰';
+      // Create mobile menu button if it doesn't exist
+      if (!mobileMenuBtn) {
+        const newMenuBtn = document.createElement('button');
+        newMenuBtn.className = 'mobile-menu-btn';
+        newMenuBtn.innerHTML = '☰';
+        document.querySelector('nav').appendChild(newMenuBtn);
+        newMenuBtn.addEventListener('click', toggleMobileMenu);
+      } else {
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+      }
+      
+      // Handle dropdown menus on mobile
+      const dropdowns = document.querySelectorAll('.dropdown');
+      dropdowns.forEach(dropdown => {
+        const link = dropdown.querySelector('a');
+        const menu = dropdown.querySelector('.dropdown-menu');
+        
+        link.addEventListener('click', function(e) {
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            menu.classList.toggle('active');
+            
+            // Close other dropdowns when opening this one
+            document.querySelectorAll('.dropdown-menu').forEach(otherMenu => {
+              if (otherMenu !== menu && otherMenu.classList.contains('active')) {
+                otherMenu.classList.remove('active');
+              }
+            });
+          }
+        });
       });
-    } else {
-      mobileMenuBtn.style.display = 'block';
       
-      mobileMenuBtn.addEventListener('click', function() {
-        navList.classList.toggle('active');
-        this.innerHTML = navList.classList.contains('active') ? '✕' : '☰';
+      // Close menu when clicking outside on mobile
+      document.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768 && navList.classList.contains('active')) {
+          if (!e.target.closest('nav') && !e.target.closest('.mobile-menu-btn')) {
+            closeMobileMenu();
+          }
+        }
       });
-    }
-    
-    // Handle dropdown menus on mobile
-    dropdowns.forEach(dropdown => {
-      const link = dropdown.querySelector('a');
-      const menu = dropdown.querySelector('.dropdown-menu');
       
-      link.addEventListener('click', function(e) {
-        if (window.innerWidth <= 768) {
-          e.preventDefault();
-          menu.classList.toggle('active');
+      // Close menu when clicking a link (except dropdown parent links)
+      document.querySelectorAll('nav a').forEach(link => {
+        if (!link.parentElement.classList.contains('dropdown')) {
+          link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+              closeMobileMenu();
+            }
+          });
+        }
+      });
+      
+      // Window resize handler
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+          // Reset mobile menu state on larger screens
+          navList.classList.remove('active');
+          document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            menu.classList.remove('active');
+          });
+          if (mobileMenuBtn) mobileMenuBtn.innerHTML = '☰';
         }
       });
     });
-  } else {
-    if (mobileMenuBtn) mobileMenuBtn.style.display = 'none';
-    navList.classList.remove('active');
-    document.querySelectorAll('.dropdown-menu').forEach(menu => {
-      menu.classList.remove('active');
-    });
-  }
-}
-    // Run on load and resize
-    window.addEventListener('load', setupMobileMenu);
-    window.addEventListener('resize', setupMobileMenu);
+    
+    function toggleMobileMenu() {
+      const navList = document.querySelector('nav ul');
+      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+      
+      navList.classList.toggle('active');
+      mobileMenuBtn.innerHTML = navList.classList.contains('active') ? '✕' : '☰';
+      
+      // Close all dropdown menus when toggling main menu
+      if (!navList.classList.contains('active')) {
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+          menu.classList.remove('active');
+        });
+      }
+    }
+    
+    function closeMobileMenu() {
+      const navList = document.querySelector('nav ul');
+      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+      
+      navList.classList.remove('active');
+      mobileMenuBtn.innerHTML = '☰';
+      
+      // Close all dropdown menus
+      document.querySelectorAll('.dropdown-menu').forEach(menu => {
+        menu.classList.remove('active');
+      });
+    }
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1116,9 +1187,7 @@ function setupMobileMenu() {
           
           // Close mobile menu if open
           if (window.innerWidth <= 768) {
-            document.querySelector('nav ul').style.display = 'none';
-            const menuBtn = document.querySelector('.mobile-menu-btn');
-            if (menuBtn) menuBtn.innerHTML = '☰';
+            closeMobileMenu();
           }
         }
       });
