@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>TapNex Technologies</title>
+  <title>TapNex Technologies - Premier IT Staffing Solutions</title>
+  <meta name="description" content="TapNex Technologies connects businesses with top-tier IT talent through specialized staffing solutions including permanent, contract, and executive search services.">
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/SenTineL-iwnl/tapnex/main/Geometric%20Logo%20with%20Navy%20and%20Silver.png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
@@ -15,6 +16,28 @@
       --accent: #00d4ff;
       --transition: all 0.3s ease;
     }
+    
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    body {
+      background: #fff;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 5%;
+    }
+    
     .modern-btn {
       padding: 12px 28px;
       background: var(--primary);
@@ -25,24 +48,36 @@
       cursor: pointer;
       transition: var(--transition);
       font-weight: 600;
-      box-shadow: 0 4px 15px rgba(0,102,255,.3)
+      box-shadow: 0 4px 15px rgba(0,102,255,.3);
+      display: inline-block;
+      text-decoration: none;
+      text-align: center;
     }
+    
     .modern-btn:hover {
       background: #0055dd;
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0,102,255,.4)
+      box-shadow: 0 6px 20px rgba(0,102,255,.4);
     }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif
+    
+    .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+      position: relative;
+      display: inline-block;
     }
-    body {
-      background: #fff;
-      color: #333;
-      line-height: 1.6
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--primary);
     }
+    
+    /* Navigation */
     nav {
       background: var(--dark);
       padding: 15px 5%;
@@ -55,17 +90,20 @@
       box-shadow: 0 2px 20px rgba(0,0,0,.1);
       height: 70px;
     }
+    
     .logo-container {
       display: flex;
       align-items: center;
       gap: 15px;
       height: 100%;
     }
+    
     .logo-container img {
       height: 42px;
       width: auto;
       display: block;
     }
+    
     .logo-text {
       color: white;
       font-weight: 600;
@@ -74,6 +112,7 @@
       align-items: center;
       height: 100%;
     }
+    
     nav ul {
       display: flex;
       gap: 24px;
@@ -82,6 +121,7 @@
       margin: 0;
       padding: 0;
     }
+    
     nav ul li {
       list-style: none;
       height: 100%;
@@ -89,6 +129,7 @@
       align-items: center;
       position: relative;
     }
+    
     nav a {
       color: #fff;
       text-decoration: none;
@@ -101,6 +142,7 @@
       display: flex;
       align-items: center;
     }
+    
     nav a:after {
       content: '';
       position: absolute;
@@ -109,23 +151,28 @@
       background: var(--accent);
       bottom: 0;
       left: 0;
-      transition: width .3s
+      transition: width .3s;
     }
+    
     nav a:hover:after {
-      width: 100%
+      width: 100%;
     }
+    
     nav a:hover {
       color: var(--accent);
     }
+    
     .contact-btn {
       background: var(--primary);
       padding: 8px 20px;
       border-radius: 4px;
       margin-left: 10px;
     }
+    
     .contact-btn:hover {
       background: #0055dd;
     }
+    
     .dropdown-menu {
       display: none;
       position: absolute;
@@ -138,24 +185,30 @@
       border-radius: 4px;
       padding: 10px 0;
     }
+    
     .dropdown-menu a {
       color: white;
       padding: 10px 20px;
       text-decoration: none;
       display: block;
     }
+    
     .dropdown-menu a:hover {
       background: rgba(255,255,255,0.1);
     }
+    
     nav ul li:hover .dropdown-menu {
       display: block;
     }
+    
+    /* Hero Carousel */
     .hero-carousel {
-      height: 70vh;
-      min-height: 500px;
+      height: 80vh;
+      min-height: 600px;
       position: relative;
-      overflow: hidden
+      overflow: hidden;
     }
+    
     .carousel-slide {
       position: absolute;
       width: 100%;
@@ -166,17 +219,20 @@
       transition: opacity 1s ease-in-out;
       display: flex;
       align-items: center;
-      justify-content: center
+      justify-content: center;
     }
+    
     .carousel-slide::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg,rgba(0,31,63,.8) 0%,rgba(0,31,63,.4) 100%)
+      background: linear-gradient(90deg,rgba(0,31,63,.8) 0%,rgba(0,31,63,.4) 100%);
     }
+    
     .carousel-slide.active {
-      opacity: 1
+      opacity: 1;
     }
+    
     .carousel-text {
       max-width: 1200px;
       padding: 0 5%;
@@ -185,28 +241,24 @@
       color: #fff;
       text-align: left;
     }
+    
     .carousel-text h1 {
-      font-size: 2.8rem;
+      font-size: 3rem;
       line-height: 1.1;
       margin-bottom: 16px;
       font-weight: 700;
       animation: fadeInUp 1s ease;
     }
+    
     .carousel-text p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       max-width: 600px;
       margin-bottom: 28px;
       opacity: .9;
       animation: fadeInUp 1s ease 0.3s forwards;
       opacity: 0;
     }
-    .carousel-text .modern-btn {
-      animation: fadeInUp 1s ease 0.6s forwards;
-      opacity: 0;
-      cursor: pointer;
-      z-index: 10;
-      position: relative;
-    }
+    
     .carousel-indicators {
       position: absolute;
       bottom: 20px;
@@ -216,6 +268,7 @@
       gap: 10px;
       z-index: 10;
     }
+    
     .carousel-indicator {
       width: 10px;
       height: 10px;
@@ -224,10 +277,12 @@
       cursor: pointer;
       transition: all 0.3s;
     }
+    
     .carousel-indicator.active {
       background: white;
       transform: scale(1.2);
     }
+    
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -238,65 +293,121 @@
         transform: translateY(0);
       }
     }
-    .section-title {
-      font-size: 2.2rem;
-      margin-bottom: 40px;
-      position: relative;
-      display: inline-block
+    
+    /* Featured Technologies Section */
+    .tech-section {
+      padding: 80px 5%;
+      background: var(--light);
+      text-align: center;
     }
-    .section-title:after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 60px;
-      height: 4px;
-      background: var(--primary)
-    }
-    .card-grid {
+    
+    .tech-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 30px;
-      margin-top: 40px
+      margin-top: 40px;
     }
-    .card {
+    
+    .tech-item {
+      padding: 30px 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .tech-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .tech-icon {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary);
+      border-radius: 50%;
+      color: white;
+      font-size: 1.8rem;
+    }
+    
+    .tech-name {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+    
+    .tech-description {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    
+    /* Services Preview */
+    .services-section {
+      padding: 80px 5%;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .service-card {
       background: #fff;
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(0,0,0,.05);
-      transition: transform .3s,box-shadow .3s
-    }
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 40px rgba(0,0,0,.1)
-    }
-    .card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover
-    }
-    .card-content {
-      padding: 28px
-    }
-    .card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 12px
-    }
-    .card p {
-      margin-bottom: 20px;
-      color: #666
+      transition: transform .3s,box-shadow .3s;
+      position: relative;
     }
     
-    /* Industries Section Styles */
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0,0,0,.1);
+    }
+    
+    .service-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    
+    .service-card-content {
+      padding: 28px;
+    }
+    
+    .service-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+    
+    .service-card p {
+      margin-bottom: 20px;
+      color: #666;
+    }
+    
+    /* Industries Section */
     .industries {
       padding: 80px 5%;
       background-color: #f9fbfe;
     }
+    
     .industries-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 25px;
     }
+    
     .industry-card {
       background: white;
       border-radius: 10px;
@@ -305,10 +416,12 @@
       transition: all 0.3s ease;
       text-align: center;
     }
+    
     .industry-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     }
+    
     .industry-icon {
       width: 60px;
       height: 60px;
@@ -321,147 +434,127 @@
       color: white;
       font-size: 1.8rem;
     }
+    
     .industry-card h3 {
       color: var(--dark);
       margin-bottom: 15px;
     }
+    
     .industry-card p {
       color: #666;
       font-size: 0.95rem;
     }
     
-    .testimonials {
-      background: var(--light);
-      padding: 80px 5%
-    }
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-      gap: 30px
-    }
-    .testimonial-card {
-      padding: 30px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,.03)
-    }
-    .testimonial-card p {
-      font-style: italic;
-      margin-bottom: 20px;
-      position: relative
-    }
-    .testimonial-card p:before {
-      content: '"';
-      font-size: 4rem;
-      position: absolute;
-      opacity: .1;
-      top: -20px;
-      left: -10px
-    }
-    .testimonial-author {
-      font-weight: 600
-    }
-
-    /* Newsletter Section */
-    .newsletter-section {
-      background: var(--primary);
-      padding: 60px 5%;
-      color: white;
+    /* CTA Section */
+    .cta-section {
+      padding: 80px 5%;
       text-align: center;
-    }
-    .newsletter-section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      position: relative;
-      display: inline-block;
-    }
-    .newsletter-section h2:after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 4px;
-      background: var(--accent);
-    }
-    .newsletter-section p {
-      max-width: 600px;
-      margin: 0 auto 30px;
-      opacity: 0.9;
-    }
-    .newsletter-form {
-      display: flex;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-    .newsletter-input {
-      flex: 1;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 50px 0 0 50px;
-      font-size: 1rem;
-    }
-    .newsletter-input:focus {
-      outline: 2px solid var(--accent);
-    }
-    .newsletter-btn {
-      padding: 12px 25px;
-      background: var(--dark);
+      background: linear-gradient(to right, var(--primary), var(--accent));
       color: white;
-      border: none;
-      border-radius: 0 50px 50px 0;
-      font-weight: 600;
-      transition: var(--transition);
-    }
-    .newsletter-btn:hover {
-      background: #002851;
     }
     
-    /* Footer Styles */
+    .cta-section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+    
+    .cta-section p {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .cta-btn {
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .primary-btn {
+      background: white;
+      color: var(--primary);
+      border: 2px solid white;
+    }
+    
+    .primary-btn:hover {
+      background: transparent;
+      color: white;
+    }
+    
+    .secondary-btn {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+    
+    .secondary-btn:hover {
+      background: white;
+      color: var(--primary);
+    }
+    
+    /* Footer */
     footer {
       background: var(--dark);
       color: #fff;
-      padding: 60px 5% 30px
+      padding: 60px 5% 30px;
     }
+    
     .footer-container {
       max-width: 1400px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-      gap: 40px
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
     }
+    
     .footer-brand {
       display: flex;
       align-items: flex-start;
       gap: 15px;
-      margin-bottom: 25px
+      margin-bottom: 25px;
     }
+    
     .footer-brand img {
-      height: 50px
+      height: 50px;
     }
+    
     .footer-brand-text {
       display: flex;
       flex-direction: column;
     }
+    
     .footer-company-name {
       font-size: 1.4rem;
       font-weight: 600;
       color: white;
       line-height: 1.2;
     }
+    
     .footer-company-tagline {
       font-size: 0.9rem;
       color: var(--accent);
       font-weight: 400;
       margin-top: 5px;
     }
+    
     .footer-description {
       color: #a3c5e0;
       margin-top: 20px;
       line-height: 1.6;
       font-size: 0.95rem;
     }
+    
     .quick-links h4, .social h4 {
       font-size: 1.1rem;
       margin-bottom: 20px;
@@ -469,6 +562,7 @@
       padding-bottom: 10px;
       color: white;
     }
+    
     .quick-links h4:after, .social h4:after {
       content: '';
       position: absolute;
@@ -476,14 +570,17 @@
       left: 0;
       width: 40px;
       height: 2px;
-      background: var(--accent)
+      background: var(--accent);
     }
+    
     .quick-links ul {
-      list-style: none
+      list-style: none;
     }
+    
     .quick-links li {
-      margin-bottom: 12px
+      margin-bottom: 12px;
     }
+    
     .quick-links a {
       color: #cbdbe9;
       text-decoration: none;
@@ -493,13 +590,17 @@
       gap: 10px;
       font-size: 0.95rem;
     }
+    
     .quick-links a:hover {
-      color: var(--accent)
+      color: var(--accent);
     }
+    
     .social-links {
       display: flex;
-      gap: 20px
+      gap: 20px;
+      margin-bottom: 20px;
     }
+    
     .social-links a {
       display: flex;
       align-items: center;
@@ -508,61 +609,49 @@
       height: 40px;
       border-radius: 50%;
       background: rgba(255,255,255,.1);
-      transition: var(--transition)
+      transition: var(--transition);
     }
+    
     .social-links a:hover {
       background: var(--accent);
-      transform: translateY(-3px)
+      transform: translateY(-3px);
     }
+    
+    .footer-contact {
+      margin-top: 15px;
+    }
+    
+    .footer-contact a {
+      color: #a3c5e0;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+      transition: color .3s;
+    }
+    
+    .footer-contact a:hover {
+      color: var(--accent);
+    }
+    
     .copyright {
       text-align: center;
       margin-top: 40px;
       padding-top: 20px;
       border-top: 1px solid rgba(255,255,255,.1);
       color: rgba(255,255,255,.6);
-      font-size: .9rem
+      font-size: .9rem;
     }
     
-    /* Popup Modal Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 2000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.7);
-    }
-    .modal-content {
-      background-color: #fff;
-      margin: 10% auto;
-      padding: 30px;
-      border-radius: 12px;
-      width: 80%;
-      max-width: 700px;
-      box-shadow: 0 5px 30px rgba(0,0,0,0.3);
-      position: relative;
-    }
-    .close-btn {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #aaa;
-      cursor: pointer;
-    }
-    .close-btn:hover {
-      color: var(--dark);
-    }
-    .modal-title {
-      color: var(--primary);
-      margin-bottom: 20px;
-    }
-    .modal-body {
-      line-height: 1.6;
-      color: #555;
+    /* Responsive Styles */
+    @media (max-width: 1024px) {
+      .hero-carousel {
+        height: 70vh;
+        min-height: 500px;
+      }
+      
+      .carousel-text h1 {
+        font-size: 2.5rem;
+      }
     }
     
     @media (max-width: 768px) {
@@ -639,39 +728,31 @@
         height: 60vh;
         min-height: 400px;
       }
+      
       .carousel-text h1 {
-        font-size: 2rem
+        font-size: 2rem;
       }
+      
       .carousel-text p {
-        font-size: 1rem
+        font-size: 1rem;
       }
+      
       .section-title {
-        font-size: 1.8rem
+        font-size: 1.8rem;
       }
-      .card-grid {
-        grid-template-columns: 1fr
-      }
-      .industries-grid {
-        grid-template-columns: 1fr;
-      }
-      .newsletter-form {
+      
+      .cta-buttons {
         flex-direction: column;
+        align-items: center;
       }
-      .newsletter-input {
-        border-radius: 50px;
-        margin-bottom: 10px;
+      
+      .cta-section h2 {
+        font-size: 1.8rem;
       }
-      .newsletter-btn {
-        border-radius: 50px;
-      }
+      
       .footer-container {
         grid-template-columns: 1fr;
         gap: 30px;
-      }
-      .modal-content {
-        width: 90%;
-        margin: 20% auto;
-        padding: 20px;
       }
     }
   </style>
@@ -688,10 +769,12 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html">Services</a></li>
       <li class="dropdown">
-        <a href="#">Blog <span class="dropdown-arrow">▼</span></a>
+        <a href="#">Staffing Solutions</a>
         <div class="dropdown-menu">
-          <a href="blog1.html">Blog 1</a>
-          <a href="blog2.html">Blog 2</a>
+          <a href="services.html#permanent">Permanent Staffing</a>
+          <a href="services.html#contract">Contract Staffing</a>
+          <a href="services.html#cth">Contract-to-Hire</a>
+          <a href="services.html#executive">Executive Search</a>
         </div>
       </li>
       <li><a href="about.html">About</a></li>
@@ -700,27 +783,26 @@
     <button class="mobile-menu-btn" style="display: none;">☰</button>
   </nav>
   
-  <!-- Rest of your HTML content remains the same -->
   <div class="hero-carousel">
     <div class="carousel-slide active" style="background-image:url('https://images.pexels.com/photos/1181316/pexels-photo-1181316.jpeg')">
       <div class="carousel-text">
         <h1>Tap into Top IT Talent</h1>
         <p>Access pre-vetted technology professionals perfectly matched to your requirements and company culture.</p>
-        <button class="modern-btn" onclick="window.location.href='contact.html'">Get Started</button>
+        <a href="services.html" class="modern-btn">Explore Our Services</a>
       </div>
     </div>
     <div class="carousel-slide" style="background-image:url('https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg')">
       <div class="carousel-text">
         <h1>Expert Technology Staffing Solutions</h1>
         <p>Find the perfect tech talent for your team with our specialized recruitment services.</p>
-        <button class="modern-btn" onclick="window.location.href='contact.html'">Explore Talent</button>
+        <a href="contact.html" class="modern-btn">Get Started Today</a>
       </div>
     </div>
     <div class="carousel-slide" style="background-image:url('https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg')">
       <div class="carousel-text">
         <h1>Specialized IT Recruitment</h1>
         <p>We connect you with niche technology experts for your most challenging staffing needs.</p>
-        <button class="modern-btn" onclick="window.location.href='contact.html'">Learn More</button>
+        <a href="#industries" class="modern-btn">View Industries We Serve</a>
       </div>
     </div>
     <div class="carousel-indicators">
@@ -730,116 +812,135 @@
     </div>
   </div>
   
-  <section style="padding:80px 5%">
-    <h2 class="section-title">Our Services</h2>
-    <div class="card-grid">
-      <div class="card">
-        <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg" alt="IT Staffing">
-        <div class="card-content">
-          <h3>Permanent IT Staffing</h3>
-          <p>Direct-hire solutions for long-term technology talent needs with comprehensive vetting and cultural fit assessment.</p>
-          <button class="modern-btn learn-more-btn" style="background:#fff;color:var(--primary);border:1px solid var(--primary)" data-service="staffing">Learn More</button>
+  <!-- Featured Technologies Section -->
+  <section class="tech-section">
+    <div class="container">
+      <h2 class="section-title">Our Technology Specializations</h2>
+      <p>We provide top talent across these key technology domains</p>
+      
+      <div class="tech-grid">
+        <div class="tech-item" data-aos="fade-up">
+          <div class="tech-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+          </div>
+          <h3 class="tech-name">Software Developers</h3>
+          <p class="tech-description">Full-stack, front-end, and back-end developers across all major languages and frameworks</p>
         </div>
-      </div>
-      <div class="card">
-        <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg" alt="Consulting">
-        <div class="card-content">
-          <h3>Contract Staffing</h3>
-          <p>Flexible staffing solutions with highly skilled IT professionals for project-based or temporary needs.</p>
-          <button class="modern-btn learn-more-btn" style="background:#fff;color:var(--primary);border:1px solid var(--primary)" data-service="consulting">Learn More</button>
+        <div class="tech-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="tech-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+          </div>
+          <h3 class="tech-name">Quality Assurance</h3>
+          <p class="tech-description">Manual and automated testers with expertise in all testing methodologies</p>
         </div>
-      </div>
-      <div class="card">
-        <img src="https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg" alt="Contract-to-Hire">
-        <div class="card-content">
-          <h3>Contract-to-Hire</h3>
-          <p>Try before you buy - evaluate IT professionals before making a permanent hiring decision.</p>
-          <button class="modern-btn learn-more-btn" style="background:#fff;color:var(--primary);border:1px solid var(--primary)" data-service="contract">Learn More</button>
+        <div class="tech-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="tech-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          </div>
+          <h3 class="tech-name">Cloud Computing</h3>
+          <p class="tech-description">AWS, Azure, and GCP certified professionals for your cloud infrastructure needs</p>
+        </div>
+        <div class="tech-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="tech-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          </div>
+          <h3 class="tech-name">AI/ML</h3>
+          <p class="tech-description">Machine learning engineers and data scientists for intelligent solutions</p>
         </div>
       </div>
     </div>
   </section>
   
-  <!-- Industries We Serve Section -->
-  <section class="industries">
+  <!-- Services Preview Section -->
+  <section class="services-section">
+    <div class="container">
+      <h2 class="section-title">Our Staffing Solutions</h2>
+      <p>Comprehensive services tailored to your technology talent needs</p>
+      
+      <div class="services-grid">
+        <div class="service-card" data-aos="fade-up">
+          <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg" alt="Permanent Staffing">
+          <div class="service-card-content">
+            <h3>Permanent Staffing</h3>
+            <p>Direct-hire solutions for long-term technology talent needs with comprehensive vetting and cultural fit assessment.</p>
+            <a href="services.html#permanent" class="modern-btn" style="background:#fff;color:var(--primary);border:1px solid var(--primary)">Learn More</a>
+          </div>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg" alt="Contract Staffing">
+          <div class="service-card-content">
+            <h3>Contract Staffing</h3>
+            <p>Flexible staffing solutions with highly skilled IT professionals for project-based or temporary needs.</p>
+            <a href="services.html#contract" class="modern-btn" style="background:#fff;color:var(--primary);border:1px solid var(--primary)">Learn More</a>
+          </div>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg" alt="Contract-to-Hire">
+          <div class="service-card-content">
+            <h3>Contract-to-Hire</h3>
+            <p>Try before you buy - evaluate IT professionals before making a permanent hiring decision.</p>
+            <a href="services.html#cth" class="modern-btn" style="background:#fff;color:var(--primary);border:1px solid var(--primary)">Learn More</a>
+          </div>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="services.html" class="modern-btn">View All Services</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Industries Section -->
+  <section id="industries" class="industries">
     <div class="container">
       <h2 class="section-title">Industries We Serve</h2>
+      <p>Specialized IT staffing solutions across key industries</p>
+      
       <div class="industries-grid">
-        <div class="industry-card">
+        <div class="industry-card" data-aos="fade-up">
           <div class="industry-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
           </div>
           <h3>Technology</h3>
           <p>We provide specialized IT consultants including software architects, DevOps engineers, cybersecurity experts, and AI/ML specialists for tech companies.</p>
         </div>
-        <div class="industry-card">
+        <div class="industry-card" data-aos="fade-up" data-aos-delay="100">
           <div class="industry-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
           </div>
           <h3>Finance & Banking</h3>
           <p>Our financial consultants include FinTech developers, blockchain experts, financial systems analysts, and compliance specialists with deep industry knowledge.</p>
         </div>
-        <div class="industry-card">
+        <div class="industry-card" data-aos="fade-up" data-aos-delay="200">
           <div class="industry-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
           </div>
           <h3>Retail & E-commerce</h3>
           <p>We supply retail technology consultants including e-commerce platform specialists, POS system experts, and omnichannel integration consultants.</p>
         </div>
-        <div class="industry-card">
+        <div class="industry-card" data-aos="fade-up" data-aos-delay="300">
           <div class="industry-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
           </div>
           <h3>Healthcare</h3>
           <p>Our healthcare IT consultants include EHR/EMR specialists, healthcare data analysts, telemedicine experts, and HIPAA compliance officers.</p>
         </div>
-        <div class="industry-card">
-          <div class="industry-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
-          </div>
-          <h3>Manufacturing</h3>
-          <p>We provide Industry 4.0 consultants including IoT specialists, automation engineers, supply chain optimization experts, and MES system architects.</p>
-        </div>
-        <div class="industry-card">
-          <div class="industry-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-          </div>
-          <h3>Education</h3>
-          <p>Our education technology consultants include LMS specialists, edtech developers, instructional design technologists, and student information system experts.</p>
-        </div>
       </div>
     </div>
   </section>
   
-  <section class="testimonials">
-    <h2 class="section-title" style="color:var(--dark)">Client Success Stories</h2>
-    <div class="testimonial-grid">
-      <div class="testimonial-card">
-        <p>TapNex transformed our technology team. Their consultants integrated seamlessly and delivered exceptional results.</p>
-        <div class="testimonial-author">— Tech Enterprise Inc.</div>
-      </div>
-      <div class="testimonial-card">
-        <p>Their staffing process found us perfect candidates in half the time of other agencies.</p>
-        <div class="testimonial-author">— InnovateCo</div>
-      </div>
-      <div class="testimonial-card">
-        <p>We've filled 15 critical tech positions through TapNex with a 95% retention rate after 12 months.</p>
-        <div class="testimonial-author">— Financial Services Corp</div>
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to Build Your Dream Team?</h2>
+      <p>Whether you need one specialist or an entire team, we have the expertise and network to deliver exceptional talent tailored to your needs.</p>
+      <div class="cta-buttons">
+        <button class="cta-btn primary-btn" onclick="window.location.href='contact.html'">Get Started Today</button>
+        <button class="cta-btn secondary-btn" onclick="window.location.href='tel:+1234567890'">Call Our Experts</button>
       </div>
     </div>
   </section>
   
-  <!-- Newsletter Section -->
-  <section class="newsletter-section">
-    <h2>Stay Updated with Tech Hiring Trends</h2>
-    <p>Subscribe to our newsletter for the latest insights on IT staffing, recruitment strategies, and industry news.</p>
-    
-    <form class="newsletter-form" id="newsletter-form">
-      <input type="email" class="newsletter-input" placeholder="Enter your email" required aria-label="Email address">
-      <button type="submit" class="newsletter-btn">Subscribe</button>
-    </form>
-  </section>
-
   <footer>
     <div class="footer-container">
       <div>
@@ -850,10 +951,9 @@
             <span class="footer-company-tagline">Tap into Top IT Talent</span>
           </div>
         </div>
-        <p class="footer-description">Empowering businesses through innovative technology staffing solutions.</p>
+        <p class="footer-description">Empowering businesses through innovative technology staffing solutions that drive growth and innovation.</p>
       </div>
 
-      <!-- Services Section -->
       <div class="quick-links">
         <h4>Our Services</h4>
         <ul>
@@ -866,12 +966,12 @@
       </div>
 
       <div class="quick-links">
-        <h4>Quick Links</h4>
+        <h4>Company</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="#">Blog</a></li>
           <li><a href="about.html">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="blog1.html">Blog</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -883,72 +983,24 @@
           <a href="#" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 3H5C3.895 3 3 3.895 3 5V19C3 20.105 3.895 21 5 21H19C20.105 21 21 20.105 21 19V5C21 3.895 20.105 3 19 3ZM8 18H5V10H8V18ZM6.5 8.309C5.53 8.309 4.75 7.53 4.75 6.561C4.75 5.591 5.53 4.812 6.5 4.812C7.47 4.812 8.25 5.591 8.25 6.561C8.25 7.53 7.47 8.309 6.5 8.309ZM19 18H16V13.396C16 11.142 13.751 11.2 13.5 11.2C13.25 11.2 11 11.142 11 13.396V18H8V10H11V11.765C11.83 10.456 13.6 10.2 14.5 10.2C16.7 10.2 19 11.5 19 13.896V18Z" fill="white"/></svg></a>
           <a href="#" aria-label="Twitter"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.46 6C21.69 6.35 20.86 6.58 20 6.69C20.88 6.16 21.56 5.32 21.88 4.31C21.05 4.81 20.13 5.16 19.16 5.36C18.37 4.5 17.26 4 16 4C13.65 4 11.73 5.92 11.73 8.29C11.73 8.63 11.77 8.96 11.84 9.27C8.28 9.09 5.11 7.38 3 4.79C2.63 5.42 2.42 6.16 2.42 6.94C2.42 8.43 3.17 9.75 4.33 10.5C3.62 10.5 2.96 10.3 2.38 10C2.38 10 2.38 10 2.38 10.03C2.38 12.11 3.86 13.85 5.82 14.24C5.46 14.34 5.08 14.39 4.69 14.39C4.42 14.39 4.15 14.36 3.89 14.31C4.43 16 6 17.26 7.89 17.29C6.43 18.45 4.58 19.13 2.56 19.13C2.22 19.13 1.88 19.11 1.54 19.07C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79C20.33 8.6 20.33 8.42 20.32 8.23C21.16 7.63 21.88 6.87 22.46 6Z" fill="white"/></svg></a>
         </div>
+        <div class="footer-contact">
+          <a href="mailto:info@tapnextech.com">info@tapnextech.com</a>
+          <a href="tel:+1234567890">+1 (234) 567-890</a>
+          <p>123 Tech Street, Suite 456<br>San Francisco, CA 94107</p>
+        </div>
       </div>
     </div>
     <div class="copyright">© 2025 TapNex Technologies. All rights reserved.</div>
   </footer>
   
-  <!-- Modal Popups -->
-  <div id="staffingModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn">&times;</span>
-      <h3 class="modal-title">Permanent IT Staffing</h3>
-      <div class="modal-body">
-        <p>Our Permanent IT Staffing service connects you with pre-vetted technology professionals for direct hire positions. We go beyond just skills matching to ensure the right cultural and technical fit for your team.</p>
-        <p><strong>Key Features:</strong></p>
-        <ul>
-          <li>Comprehensive technical vetting including coding tests and system design interviews</li>
-          <li>Cultural fit evaluation tailored to your organization</li>
-          <li>Specialized recruitment for niche technologies and hard-to-fill roles</li>
-          <li>90-day replacement guarantee for all permanent placements</li>
-          <li>Ongoing support during the onboarding process</li>
-        </ul>
-        <p>Whether you need a single specialist or an entire team, we can deliver qualified candidates within days, not weeks.</p>
-      </div>
-    </div>
-  </div>
-  
-  <div id="consultingModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn">&times;</span>
-      <h3 class="modal-title">Contract Staffing</h3>
-      <div class="modal-body">
-        <p>Our Contract Staffing solutions provide flexible access to top IT talent for your project-based or temporary needs. All contractors are thoroughly vetted and ready to hit the ground running.</p>
-        <p><strong>Our Approach:</strong></p>
-        <ul>
-          <li>Rapid deployment of pre-screened contract professionals</li>
-          <li>Specialized talent for short-term projects and interim needs</li>
-          <li>Full compliance with employment laws and regulations</li>
-          <li>Dedicated account management for continuous support</li>
-          <li>Scalable solutions that grow with your project requirements</li>
-        </ul>
-        <p>We maintain a deep bench of contract professionals across all major technologies and specialties.</p>
-      </div>
-    </div>
-  </div>
-  
-  <div id="contractModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn">&times;</span>
-      <h3 class="modal-title">Contract-to-Hire</h3>
-      <div class="modal-body">
-        <p>Our Contract-to-Hire solution gives you the opportunity to evaluate IT professionals in your work environment before making a permanent hiring decision.</p>
-        <p><strong>Key Benefits:</strong></p>
-        <ul>
-          <li>Low-risk way to assess skills and cultural fit</li>
-          <li>Seamless transition to permanent employment</li>
-          <li>All contract periods count toward benefits eligibility</li>
-          <li>Flexible conversion timelines to meet your needs</li>
-          <li>Reduced hiring risk with our satisfaction guarantee</li>
-        </ul>
-        <p>This model is ideal for companies that want to "try before they buy" when bringing on new technical team members.</p>
-      </div>
-    </div>
-  </div>
-  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
-    AOS.init();
+    // Initialize AOS animation library
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
     
     // Enhanced Carousel Functionality
     let currentSlide = 0;
@@ -993,35 +1045,6 @@
       });
     });
     
-    // Modal functionality
-    const modals = {
-      staffing: document.getElementById('staffingModal'),
-      consulting: document.getElementById('consultingModal'),
-      contract: document.getElementById('contractModal')
-    };
-    
-    const buttons = document.querySelectorAll('.learn-more-btn');
-    const closeBtns = document.querySelectorAll('.close-btn');
-    
-    buttons.forEach(button => {
-      button.addEventListener('click', function() {
-        const service = this.getAttribute('data-service');
-        modals[service].style.display = 'block';
-      });
-    });
-    
-    closeBtns.forEach(btn => {
-      btn.addEventListener('click', function() {
-        this.closest('.modal').style.display = 'none';
-      });
-    });
-    
-    window.addEventListener('click', function(event) {
-      if (event.target.classList.contains('modal')) {
-        event.target.style.display = 'none';
-      }
-    });
-    
     // Mobile menu functionality
     function setupMobileMenu() {
       const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -1029,30 +1052,45 @@
       const dropdowns = document.querySelectorAll('.dropdown');
       
       if (window.innerWidth <= 768) {
-        mobileMenuBtn.style.display = 'block';
-        
-        // Toggle main menu
-        mobileMenuBtn.addEventListener('click', function() {
-          navList.classList.toggle('active');
-          this.innerHTML = navList.classList.contains('active') ? '✕' : '☰';
-        });
+        if (!mobileMenuBtn) {
+          const newMenuBtn = document.createElement('button');
+          newMenuBtn.className = 'mobile-menu-btn';
+          newMenuBtn.innerHTML = '☰';
+          newMenuBtn.style.background = 'none';
+          newMenuBtn.style.border = 'none';
+          newMenuBtn.style.color = 'white';
+          newMenuBtn.style.fontSize = '1.5rem';
+          newMenuBtn.style.cursor = 'pointer';
+          newMenuBtn.style.display = 'block';
+          document.querySelector('nav').appendChild(newMenuBtn);
+          
+          newMenuBtn.addEventListener('click', function() {
+            navList.classList.toggle('active');
+            this.innerHTML = navList.classList.contains('active') ? '✕' : '☰';
+          });
+        } else {
+          mobileMenuBtn.style.display = 'block';
+          
+          mobileMenuBtn.addEventListener('click', function() {
+            navList.classList.toggle('active');
+            this.innerHTML = navList.classList.contains('active') ? '✕' : '☰';
+          });
+        }
         
         // Handle dropdown menus on mobile
         dropdowns.forEach(dropdown => {
           const link = dropdown.querySelector('a');
           const menu = dropdown.querySelector('.dropdown-menu');
-          const arrow = dropdown.querySelector('.dropdown-arrow');
           
           link.addEventListener('click', function(e) {
             if (window.innerWidth <= 768) {
               e.preventDefault();
               menu.classList.toggle('active');
-              arrow.textContent = menu.classList.contains('active') ? '▲' : '▼';
             }
           });
         });
       } else {
-        mobileMenuBtn.style.display = 'none';
+        if (mobileMenuBtn) mobileMenuBtn.style.display = 'none';
         navList.classList.remove('active');
         document.querySelectorAll('.dropdown-menu').forEach(menu => {
           menu.classList.remove('active');
@@ -1064,13 +1102,29 @@
     window.addEventListener('load', setupMobileMenu);
     window.addEventListener('resize', setupMobileMenu);
 
-    // Newsletter form submission
-    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const email = this.querySelector('input[type="email"]').value;
-      // Here you would typically send the email to your server
-      alert('Thank you for subscribing to our newsletter!');
-      this.reset();
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+          
+          // Close mobile menu if open
+          if (window.innerWidth <= 768) {
+            document.querySelector('nav ul').style.display = 'none';
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            if (menuBtn) menuBtn.innerHTML = '☰';
+          }
+        }
+      });
     });
   </script>
 </body>
