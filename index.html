@@ -12,7 +12,8 @@
       --primary: #0066ff;
       --dark: #001f3f;
       --light: #f8fafc;
-      --accent: #00d4ff
+      --accent: #00d4ff;
+      --transition: all 0.3s ease;
     }
     .modern-btn {
       padding: 12px 28px;
@@ -22,7 +23,7 @@
       font-size: 1rem;
       border: none;
       cursor: pointer;
-      transition: all .3s;
+      transition: var(--transition);
       font-weight: 600;
       box-shadow: 0 4px 15px rgba(0,102,255,.3)
     }
@@ -360,6 +361,64 @@
     .testimonial-author {
       font-weight: 600
     }
+
+    /* Newsletter Section */
+    .newsletter-section {
+      background: var(--primary);
+      padding: 60px 5%;
+      color: white;
+      text-align: center;
+    }
+    .newsletter-section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+    .newsletter-section h2:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: var(--accent);
+    }
+    .newsletter-section p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      opacity: 0.9;
+    }
+    .newsletter-form {
+      display: flex;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .newsletter-input {
+      flex: 1;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 50px 0 0 50px;
+      font-size: 1rem;
+    }
+    .newsletter-input:focus {
+      outline: 2px solid var(--accent);
+    }
+    .newsletter-btn {
+      padding: 12px 25px;
+      background: var(--dark);
+      color: white;
+      border: none;
+      border-radius: 0 50px 50px 0;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    .newsletter-btn:hover {
+      background: #002851;
+    }
+    
+    /* Footer Styles */
     footer {
       background: var(--dark);
       color: #fff;
@@ -370,7 +429,7 @@
       margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-      gap: 50px
+      gap: 40px
     }
     .footer-brand {
       display: flex;
@@ -396,15 +455,21 @@
       color: var(--accent);
       font-weight: 400;
       margin-top: 5px;
-      margin-left: 5px;
     }
-    .quick-links h4,.social h4 {
+    .footer-description {
+      color: #a3c5e0;
+      margin-top: 20px;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+    .quick-links h4, .social h4 {
       font-size: 1.1rem;
       margin-bottom: 20px;
       position: relative;
-      padding-bottom: 10px
+      padding-bottom: 10px;
+      color: white;
     }
-    .quick-links h4:after,.social h4:after {
+    .quick-links h4:after, .social h4:after {
       content: '';
       position: absolute;
       bottom: 0;
@@ -425,7 +490,8 @@
       transition: color .3s;
       display: flex;
       align-items: center;
-      gap: 10px
+      gap: 10px;
+      font-size: 0.95rem;
     }
     .quick-links a:hover {
       color: var(--accent)
@@ -442,7 +508,7 @@
       height: 40px;
       border-radius: 50%;
       background: rgba(255,255,255,.1);
-      transition: all .3s
+      transition: var(--transition)
     }
     .social-links a:hover {
       background: var(--accent);
@@ -551,6 +617,20 @@
       }
       .industries-grid {
         grid-template-columns: 1fr;
+      }
+      .newsletter-form {
+        flex-direction: column;
+      }
+      .newsletter-input {
+        border-radius: 50px;
+        margin-bottom: 10px;
+      }
+      .newsletter-btn {
+        border-radius: 50px;
+      }
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
       }
       .modal-content {
         width: 90%;
@@ -711,6 +791,17 @@
     </div>
   </section>
   
+  <!-- Newsletter Section -->
+  <section class="newsletter-section">
+    <h2>Stay Updated with Tech Hiring Trends</h2>
+    <p>Subscribe to our newsletter for the latest insights on IT staffing, recruitment strategies, and industry news.</p>
+    
+    <form class="newsletter-form" id="newsletter-form">
+      <input type="email" class="newsletter-input" placeholder="Enter your email" required aria-label="Email address">
+      <button type="submit" class="newsletter-btn">Subscribe</button>
+    </form>
+  </section>
+
   <footer>
     <div class="footer-container">
       <div>
@@ -721,8 +812,21 @@
             <span class="footer-company-tagline">Tap into Top IT Talent</span>
           </div>
         </div>
-        <p style="color:#a3c5e0;margin-top:20px;line-height:1.6">Empowering businesses through innovative technology staffing solutions.</p>
+        <p class="footer-description">Empowering businesses through innovative technology staffing solutions.</p>
       </div>
+
+      <!-- Services Section -->
+      <div class="quick-links">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="services.html#permanent">Permanent Staffing</a></li>
+          <li><a href="services.html#contract">Contract Staffing</a></li>
+          <li><a href="services.html#cth">Contract-to-Hire</a></li>
+          <li><a href="services.html#executive">Executive Search</a></li>
+          <li><a href="services.html#project">Project Teams</a></li>
+        </ul>
+      </div>
+
       <div class="quick-links">
         <h4>Quick Links</h4>
         <ul>
@@ -733,12 +837,13 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
+
       <div class="social">
         <h4>Connect With Us</h4>
         <div class="social-links">
-          <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.48 17.52 2 12 2C6.48 2 2 6.48 2 12C2 16.84 5.44 20.87 10 21.8V15H8V12H10V9.5C10 7.57 11.57 6 13.5 6H16V9H14C13.45 9 13 9.45 13 10V12H16V15H13V21.95C18.05 21.45 22 17.19 22 12Z" fill="white"/></svg></a>
-          <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 3H5C3.895 3 3 3.895 3 5V19C3 20.105 3.895 21 5 21H19C20.105 21 21 20.105 21 19V5C21 3.895 20.105 3 19 3ZM8 18H5V10H8V18ZM6.5 8.309C5.53 8.309 4.75 7.53 4.75 6.561C4.75 5.591 5.53 4.812 6.5 4.812C7.47 4.812 8.25 5.591 8.25 6.561C8.25 7.53 7.47 8.309 6.5 8.309ZM19 18H16V13.396C16 11.142 13.751 11.2 13.5 11.2C13.25 11.2 11 11.142 11 13.396V18H8V10H11V11.765C11.83 10.456 13.6 10.2 14.5 10.2C16.7 10.2 19 11.5 19 13.896V18Z" fill="white"/></svg></a>
-          <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.46 6C21.69 6.35 20.86 6.58 20 6.69C20.88 6.16 21.56 5.32 21.88 4.31C21.05 4.81 20.13 5.16 19.16 5.36C18.37 4.5 17.26 4 16 4C13.65 4 11.73 5.92 11.73 8.29C11.73 8.63 11.77 8.96 11.84 9.27C8.28 9.09 5.11 7.38 3 4.79C2.63 5.42 2.42 6.16 2.42 6.94C2.42 8.43 3.17 9.75 4.33 10.5C3.62 10.5 2.96 10.3 2.38 10C2.38 10 2.38 10 2.38 10.03C2.38 12.11 3.86 13.85 5.82 14.24C5.46 14.34 5.08 14.39 4.69 14.39C4.42 14.39 4.15 14.36 3.89 14.31C4.43 16 6 17.26 7.89 17.29C6.43 18.45 4.58 19.13 2.56 19.13C2.22 19.13 1.88 19.11 1.54 19.07C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79C20.33 8.6 20.33 8.42 20.32 8.23C21.16 7.63 21.88 6.87 22.46 6Z" fill="white"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.48 17.52 2 12 2C6.48 2 2 6.48 2 12C2 16.84 5.44 20.87 10 21.8V15H8V12H10V9.5C10 7.57 11.57 6 13.5 6H16V9H14C13.45 9 13 9.45 13 10V12H16V15H13V21.95C18.05 21.45 22 17.19 22 12Z" fill="white"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 3H5C3.895 3 3 3.895 3 5V19C3 20.105 3.895 21 5 21H19C20.105 21 21 20.105 21 19V5C21 3.895 20.105 3 19 3ZM8 18H5V10H8V18ZM6.5 8.309C5.53 8.309 4.75 7.53 4.75 6.561C4.75 5.591 5.53 4.812 6.5 4.812C7.47 4.812 8.25 5.591 8.25 6.561C8.25 7.53 7.47 8.309 6.5 8.309ZM19 18H16V13.396C16 11.142 13.751 11.2 13.5 11.2C13.25 11.2 11 11.142 11 13.396V18H8V10H11V11.765C11.83 10.456 13.6 10.2 14.5 10.2C16.7 10.2 19 11.5 19 13.896V18Z" fill="white"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.46 6C21.69 6.35 20.86 6.58 20 6.69C20.88 6.16 21.56 5.32 21.88 4.31C21.05 4.81 20.13 5.16 19.16 5.36C18.37 4.5 17.26 4 16 4C13.65 4 11.73 5.92 11.73 8.29C11.73 8.63 11.77 8.96 11.84 9.27C8.28 9.09 5.11 7.38 3 4.79C2.63 5.42 2.42 6.16 2.42 6.94C2.42 8.43 3.17 9.75 4.33 10.5C3.62 10.5 2.96 10.3 2.38 10C2.38 10 2.38 10 2.38 10.03C2.38 12.11 3.86 13.85 5.82 14.24C5.46 14.34 5.08 14.39 4.69 14.39C4.42 14.39 4.15 14.36 3.89 14.31C4.43 16 6 17.26 7.89 17.29C6.43 18.45 4.58 19.13 2.56 19.13C2.22 19.13 1.88 19.11 1.54 19.07C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79C20.33 8.6 20.33 8.42 20.32 8.23C21.16 7.63 21.88 6.87 22.46 6Z" fill="white"/></svg></a>
         </div>
       </div>
     </div>
@@ -910,6 +1015,15 @@
     // Run on load and resize
     window.addEventListener('load', setupMobileMenu);
     window.addEventListener('resize', setupMobileMenu);
+
+    // Newsletter form submission
+    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = this.querySelector('input[type="email"]').value;
+      // Here you would typically send the email to your server
+      alert('Thank you for subscribing to our newsletter!');
+      this.reset();
+    });
   </script>
 </body>
 </html>
