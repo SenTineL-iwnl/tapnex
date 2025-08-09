@@ -485,71 +485,112 @@
       font-size: .9rem
     }
     
-    /* Responsive Styles */
-    @media (max-width: 1024px) {
-      .service-container {
+    /* Mobile Responsiveness Fixes */
+    @media (max-width: 768px) {
+      /* Improved Mobile Navigation */
+      nav {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px 5%;
+        height: 70px;
+      }
+      
+      nav ul {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--dark);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        display: none;
+        z-index: 1000;
+      }
+      
+      nav ul.show {
+        display: flex;
+      }
+      
+      nav ul li {
+        width: 100%;
+        text-align: center;
+      }
+      
+      nav ul li a {
+        padding: 12px 0;
+        display: block;
+        width: 100%;
+      }
+      
+      .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        display: none;
+        background: rgba(0,0,0,0.2);
+      }
+      
+      nav ul li:hover .dropdown-menu {
+        display: none;
+      }
+      
+      .dropdown-menu.show {
+        display: block;
+      }
+      
+      /* Service Section Improvements */
+      .service-container, .service-container.reverse {
         flex-direction: column;
         gap: 30px;
       }
+      
       .service-image, .service-content {
         width: 100%;
       }
-      .service-container.reverse {
+      
+      .service-image img {
+        max-height: 300px;
+        object-fit: cover;
+      }
+      
+      /* Process Steps Improvements */
+      .process-steps {
         flex-direction: column;
+        align-items: center;
       }
-    }
-    @media (max-width: 768px) {
-      nav {
-        padding: 15px 5%;
-        flex-direction: column;
-        gap: 15px;
-        height: auto;
+      
+      .process-step {
+        min-width: 100%;
+        max-width: 100%;
       }
-      .logo-container {
-        height: auto;
-      }
-      .logo-text {
-        height: auto;
-      }
-      nav ul {
-        height: auto;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      nav ul li {
-        height: auto;
-      }
-      nav a {
-        height: auto;
-      }
-      .contact-btn {
-        margin-left: 0;
-        margin-top: 10px;
-      }
-      .dropdown-menu {
-        position: static;
-        display: none;
-        width: 100%;
-        box-shadow: none;
-      }
+      
+      /* Text Size Adjustments */
       .services-hero h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
       }
-      .services-hero p {
-        font-size: 1rem;
-      }
+      
       .section-title {
         font-size: 1.8rem;
       }
+      
       .service-content h3 {
         font-size: 1.5rem;
       }
-      .cta-section h2 {
-        font-size: 1.8rem;
-      }
+      
+      /* CTA Button Stacking */
       .cta-buttons {
         flex-direction: column;
-        align-items: center;
+        gap: 15px;
+      }
+      
+      .cta-btn {
+        width: 100%;
+      }
+      
+      /* Footer adjustments */
+      .footer-container {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -562,10 +603,10 @@
         <span class="logo-text">TapNex Technologies</span>
       </a>
     </div>
-    <ul>
+    <ul id="navMenu">
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html">Services</a></li>
-      <li>
+      <li class="dropdown">
         <a href="#">Blog</a>
         <div class="dropdown-menu">
           <a href="blog1.html">Blog 1</a>
@@ -575,6 +616,7 @@
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
     </ul>
+    <button class="mobile-menu-btn" style="display: none;">☰</button>
   </nav>
   
   <section class="services-hero">
@@ -868,35 +910,54 @@
   <script>
     AOS.init();
     
-    // Mobile menu toggle
+    // Mobile menu functionality
     function setupMobileMenu() {
+      const nav = document.querySelector('nav');
+      const navList = document.querySelector('nav ul');
+      const menuButton = document.querySelector('.mobile-menu-btn');
+      const dropdowns = document.querySelectorAll('.dropdown');
+      
+      // Only modify for mobile screens
       if (window.innerWidth <= 768) {
-        const nav = document.querySelector('nav');
-        const navList = document.querySelector('nav ul');
-        const logoContainer = document.querySelector('.logo-container');
+        // Show mobile menu button
+        menuButton.style.display = 'block';
         
-        const menuButton = document.createElement('button');
-        menuButton.innerHTML = '☰';
-        menuButton.style.background = 'none';
-        menuButton.style.border = 'none';
-        menuButton.style.color = 'white';
-        menuButton.style.fontSize = '1.5rem';
-        menuButton.style.cursor = 'pointer';
-        
-        nav.insertBefore(menuButton, navList);
+        // Hide nav menu by default
         navList.style.display = 'none';
         
-        menuButton.addEventListener('click', function() {
-          if (navList.style.display === 'none' || navList.style.display === '') {
-            navList.style.display = 'flex';
-          } else {
-            navList.style.display = 'none';
-          }
+        // Toggle menu function
+        const toggleMenu = () => {
+          navList.classList.toggle('show');
+          navList.style.display = navList.classList.contains('show') ? 'flex' : 'none';
+        };
+        
+        // Add click event to menu button
+        menuButton.addEventListener('click', toggleMenu);
+        
+        // Handle dropdown menus
+        dropdowns.forEach(dropdown => {
+          const link = dropdown.querySelector('a');
+          const menu = dropdown.querySelector('.dropdown-menu');
+          
+          link.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+              e.preventDefault();
+              menu.classList.toggle('show');
+              menu.style.display = menu.classList.contains('show') ? 'block' : 'none';
+            }
+          });
+        });
+      } else {
+        // Reset for desktop
+        menuButton.style.display = 'none';
+        navList.style.display = 'flex';
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+          menu.style.display = 'none';
         });
       }
     }
     
-    // Run on load and resize
+    // Initialize and handle resize
     window.addEventListener('load', setupMobileMenu);
     window.addEventListener('resize', setupMobileMenu);
     
@@ -918,6 +979,9 @@
           // Close mobile menu if open
           if (window.innerWidth <= 768) {
             document.querySelector('nav ul').style.display = 'none';
+            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+              menu.style.display = 'none';
+            });
           }
         }
       });
