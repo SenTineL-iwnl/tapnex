@@ -767,6 +767,119 @@
   color: var(--accent);
   transform: translateX(3px);
 }
+    /* ===================== MOBILE RESPONSIVE FIXES ===================== */
+@media (max-width: 768px) {
+  /* Hero Section */
+  .services-hero {
+    padding: 60px 15px 40px;
+  }
+
+  .services-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .services-hero p {
+    font-size: 1rem;
+  }
+
+  /* Services Section */
+  .service-container, 
+  .service-container.reverse {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .service-image, .service-content {
+    width: 100%;
+  }
+
+  .service-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 300px; /* adjust as needed */
+  }
+
+  .service-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .service-content p {
+    font-size: 1rem;
+  }
+
+  /* Process Steps */
+  .process-steps {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .process-step {
+    width: 90%;
+    min-width: auto;
+    max-width: none;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  /* Hero */
+  .services-hero h1 {
+    font-size: 1.6rem;
+  }
+  .services-hero p {
+    font-size: 0.95rem;
+  }
+
+  /* Footer */
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer-brand, .quick-links, .social {
+    justify-content: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .footer-contact a {
+    display: inline-block;
+  }
+
+  /* Buttons */
+  .btn {
+    width: 90%;
+    max-width: none;
+    font-size: 1rem;
+    padding: 12px 0;
+  }
+
+  /* General content padding */
+  .container {
+    padding: 0 15px;
+  }
+}
+
+/* Make all images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Fix text overflow for long headings */
+h1, h2, h3, p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
   </style>
 </head>
 <body>
