@@ -3,135 +3,140 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Contact Us | TapNex Technologies</title>
 
-<title>Contact | TapNex Technologies</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root{
+:root {
   --primary:#0066ff;
+  --dark:#001f3f;
+  --light:#f8fafc;
   --accent:#00d4ff;
-  --dark:#0a192f;
-  --light:#f4f8fb;
 }
 
-/* RESET */
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#fff;color:#333;}
+
+body{line-height:1.6;color:#333}
 
 /* NAV */
 nav{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:18px 40px;
-  background:rgba(10,25,47,0.95);
-  position:sticky;top:0;z-index:1000;
+  background:var(--dark);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
 }
-.logo{color:#fff;font-weight:600;font-size:1.2rem;}
-nav ul{display:flex;gap:25px;list-style:none;}
-nav a{color:#fff;text-decoration:none;font-size:.9rem;}
-.contact-btn{
-  background:var(--primary);
-  padding:8px 18px;
-  border-radius:6px;
-}
+
+nav a{color:#fff;text-decoration:none;margin:0 15px}
+.contact-btn{background:var(--primary);padding:8px 15px;border-radius:5px}
 
 /* HERO */
-.hero{
-  padding:120px 20px 80px;
+.contact-hero{
+  background:linear-gradient(rgba(0,31,63,.85),rgba(0,31,63,.85)),
+  url('https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg');
+  background-size:cover;
+  padding:120px 20px;
   text-align:center;
-  background:linear-gradient(135deg,#0a192f,#001f3f);
   color:#fff;
 }
-.hero h1{font-size:3rem;margin-bottom:15px;}
-.hero p{opacity:.8;max-width:600px;margin:auto;}
 
-/* LAYOUT */
-.wrapper{
-  max-width:1200px;
+.contact-hero h1{font-size:2.8rem;margin-bottom:15px}
+
+/* CONTENT */
+.contact-content{
+  max-width:1100px;
   margin:auto;
-  padding:80px 20px;
+  padding:60px 20px;
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:50px;
+  gap:40px;
 }
 
-/* CARD */
+/* CARD STYLE */
 .card{
   background:#fff;
-  border-radius:16px;
   padding:40px;
-  box-shadow:0 20px 60px rgba(0,0,0,0.08);
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  transition:.3s;
+}
+.card:hover{transform:translateY(-5px)}
+
+/* EMAIL CTA */
+.email-cta{
+  display:inline-block;
+  background:var(--primary);
+  color:#fff;
+  padding:14px 30px;
+  border-radius:50px;
+  margin-top:20px;
+  text-decoration:none;
 }
 
 /* FORM */
-.form-group{margin-bottom:20px;}
-input, textarea{
+.form-control{
   width:100%;
-  padding:14px;
-  border-radius:8px;
+  padding:12px;
+  margin-top:8px;
   border:1px solid #ddd;
-  font-size:.95rem;
+  border-radius:6px;
 }
-textarea{min-height:120px;}
 
-button{
-  width:100%;
-  padding:14px;
+.submit-btn{
+  background:var(--primary);
+  color:#fff;
   border:none;
-  background:linear-gradient(135deg,var(--primary),var(--accent));
-  color:#fff;
-  border-radius:8px;
-  font-weight:600;
+  padding:12px;
+  margin-top:15px;
+  width:100%;
+  border-radius:6px;
   cursor:pointer;
-  transition:.3s;
-}
-button:hover{transform:translateY(-2px);}
-
-/* INFO PANEL */
-.info{
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
 }
 
-.info-box{
-  margin-bottom:30px;
+/* COMPANY INFO */
+.company-info{
+  text-align:center;
+  background:var(--light);
 }
 
-.info-box h3{
-  color:var(--dark);
-  margin-bottom:10px;
-}
-
-.highlight{
-  color:var(--primary);
-  font-weight:600;
-}
-
-/* COMPANY CARD */
-.company{
-  background:linear-gradient(135deg,#0066ff,#00d4ff);
-  color:#fff;
-  padding:30px;
-  border-radius:16px;
-}
-
-/* FOOTER */
+/* FOOTER (ORIGINAL STYLE PRESERVED) */
 footer{
   background:var(--dark);
   color:#fff;
-  padding:40px 20px;
-  text-align:center;
-  margin-top:60px;
+  padding:60px 20px 30px;
 }
 
-/* MOBILE */
-@media(max-width:900px){
-  .wrapper{
-    grid-template-columns:1fr;
-  }
-  .hero h1{font-size:2.2rem;}
+.footer-container{
+  max-width:1400px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:40px;
+}
+
+.footer-brand{
+  display:flex;
+  gap:15px;
+}
+
+.footer-brand img{height:50px}
+
+.footer-company-name{font-size:1.4rem;font-weight:600}
+.footer-company-tagline{color:var(--accent)}
+
+.quick-links ul{list-style:none}
+.quick-links a{color:#cbdbe9;text-decoration:none}
+
+.footer-contact a{
+  display:block;
+  color:#a3c5e0;
+  margin-bottom:8px;
+}
+
+.copyright{
+  text-align:center;
+  margin-top:40px;
+  opacity:.6;
 }
 </style>
 </head>
@@ -140,81 +145,90 @@ footer{
 
 <!-- NAV -->
 <nav>
-  <div class="logo">TapNex Technologies</div>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html" class="contact-btn">Contact</a></li>
-  </ul>
+  <div style="color:white;font-weight:600">TapNex Technologies</div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="contact-btn">Contact</a>
+  </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<section class="contact-hero">
   <h1>Let's Build Something Great</h1>
-  <p>Partner with TapNex Technologies to scale your tech team with top-tier talent.</p>
+  <p>Reach out for IT staffing solutions</p>
 </section>
 
 <!-- CONTENT -->
-<div class="wrapper">
+<div class="contact-content">
 
-  <!-- LEFT: FORM -->
+  <!-- EMAIL -->
   <div class="card">
-    <h2 style="margin-bottom:20px;">Send a Message</h2>
-
-    <form id="contactForm">
-      <div class="form-group">
-        <input type="text" placeholder="Your Name" required>
-      </div>
-
-      <div class="form-group">
-        <input type="email" placeholder="Email Address" required>
-      </div>
-
-      <div class="form-group">
-        <textarea placeholder="Tell us about your requirement..." required></textarea>
-      </div>
-
-      <button>Send Message</button>
-    </form>
+    <h2>Email Us</h2>
+    <p>We respond within 24 hours</p>
+    <a href="mailto:info@tapnextech.com" class="email-cta">
+      info@tapnextech.com
+    </a>
   </div>
 
-  <!-- RIGHT: INFO -->
-  <div class="info">
+  <!-- COMPANY INFO -->
+  <div class="card company-info">
+    <h2>Our Office</h2>
+    <p><strong>TAPNEX TECHNOLOGIES INC</strong></p>
+    <p>314 Covert Avenue,<br>New Hyde Park, NY 11040</p>
+  </div>
 
-    <div class="card info-box">
-      <h3>Email</h3>
-      <p class="highlight">info@tapnextech.com</p>
-    </div>
-
-    <div class="card info-box">
-      <h3>Call Us</h3>
-      <p class="highlight">+1 (201) 855-3211</p>
-    </div>
-
-    <div class="company">
-      <h3>TAPNEX TECHNOLOGIES INC</h3>
-      <p style="margin-top:10px;">
-        314 Covert Avenue<br>
-        New Hyde Park, NY 11040
-      </p>
-    </div>
-
+  <!-- FORM -->
+  <div class="card">
+    <h2>Send Message</h2>
+    <form>
+      <input class="form-control" placeholder="Your Name" required>
+      <input class="form-control" placeholder="Email" required>
+      <textarea class="form-control" placeholder="Message" required></textarea>
+      <button class="submit-btn">Send Message</button>
+    </form>
   </div>
 
 </div>
 
-<!-- FOOTER -->
+<!-- ORIGINAL FOOTER -->
 <footer>
-  <p>© 2025 TapNex Technologies Inc. All rights reserved.</p>
-</footer>
+  <div class="footer-container">
 
-<script>
-document.getElementById('contactForm').addEventListener('submit',function(e){
-  e.preventDefault();
-  alert("Thanks! We'll contact you shortly.");
-});
-</script>
+    <div>
+      <div class="footer-brand">
+        <img src="https://raw.githubusercontent.com/SenTineL-iwnl/tapnex/main/Geometric%20Logo%20with%20Navy%20and%20Silver.png">
+        <div>
+          <div class="footer-company-name">TapNex Technologies</div>
+          <div class="footer-company-tagline">Tap into Top IT Talent</div>
+        </div>
+      </div>
+      <p>Empowering businesses through innovative staffing solutions.</p>
+    </div>
+
+    <div class="quick-links">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <div class="footer-contact">
+        <a href="mailto:info@tapnextech.com">info@tapnextech.com</a>
+        <a href="tel:+12018553211">+1 (201) 855-3211</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    © 2025 TapNex Technologies Inc.
+  </div>
+</footer>
 
 </body>
 </html>
