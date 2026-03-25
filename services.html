@@ -767,7 +767,33 @@
   color: var(--accent);
   transform: translateX(3px);
 }
-  
+ /* Mobile fix for service sections */
+@media (max-width: 1024px) {
+  .service-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  /* If reverse class is used (image on left desktop), show text first on mobile */
+  .service-container.reverse {
+    flex-direction: column;
+  }
+
+  .service-container.reverse .service-content {
+    order: 1; /* text comes first */
+  }
+
+  .service-container.reverse .service-image {
+    order: 2; /* image comes second */
+  }
+
+  /* Optional: make images smaller on mobile */
+  .service-image img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+  }
+} 
   </style>
 </head>
 <body>
