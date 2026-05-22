@@ -1143,6 +1143,7 @@ window.onclick = function(event){
 }
 
 </script>
+
   <script>
 
 document.getElementById("contactForm")
@@ -1164,23 +1165,17 @@ document.getElementById("contactForm")
 
   try {
 
-    const response = await fetch(
+    await fetch(
       "https://script.google.com/macros/s/AKfycbxVP_4QHoG5ZEchizJaFGJxMLsAC4upjrc3ZXZHNJdXMRJQ59RBFlUWRCJvRu692Wb8Lw/exec",
       {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
+        mode: "no-cors",
         body: JSON.stringify(data)
       }
     );
 
-    if(response.ok){
-      alert("Message sent successfully!");
-      this.reset();
-    } else {
-      alert("Failed to send message.");
-    }
+    alert("Message sent successfully!");
+    this.reset();
 
   } catch(error){
 
