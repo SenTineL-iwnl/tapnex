@@ -425,7 +425,20 @@
       }
 
     }
+.logo-container,
+.footer-brand{
+  cursor:pointer;
+}
 
+/* Navbar hover */
+.logo-container:hover .logo-text{
+  color:#00d4ff;
+}
+
+/* Footer hover */
+.footer-brand:hover .footer-company-name{
+  color:#00d4ff;
+}
   </style>
 </head>
 
@@ -436,8 +449,10 @@
   <nav>
 
     <div class="logo-container">
-      <img src="https://raw.githubusercontent.com/SenTineL-iwnl/tapnex/main/Geometric%20Logo%20with%20Navy%20and%20Silver.png">
-      <span class="logo-text">TapNex Technologies</span>
+      <a href="index.html" class="logo-container" style="text-decoration:none;">
+  <img src="https://raw.githubusercontent.com/SenTineL-iwnl/tapnex/main/Geometric%20Logo%20with%20Navy%20and%20Silver.png">
+  <span class="logo-text">TapNex Technologies</span>
+</a>
     </div>
 
     <ul>
