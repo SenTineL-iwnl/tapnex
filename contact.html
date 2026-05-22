@@ -263,95 +263,143 @@
 
     /* FOOTER */
 
-    footer{
-      background:var(--dark);
-      color:#fff;
-      padding:60px 20px 30px;
-      margin-top:80px;
+     /* Footer */
+    footer {
+      background: var(--dark);
+      color: #fff;
+      padding: 60px 5% 30px;
     }
-
-    .footer-container{
-      max-width:1200px;
-      margin:auto;
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:40px;
+    
+    .footer-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
     }
-
-    .footer-brand{
-      display:flex;
-      gap:15px;
-      align-items:flex-start;
+    
+    .footer-brand {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 25px;
     }
-
-    .footer-brand img{
-      height:50px;
+    
+    .footer-brand img {
+      height: 50px;
     }
-
-    .footer-company-name{
-      font-size:1.3rem;
-      font-weight:600;
+    
+    .footer-brand-text {
+      display: flex;
+      flex-direction: column;
     }
-
-    .footer-company-tagline{
-      color:var(--accent);
-      font-size:.9rem;
+    
+    .footer-company-name {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: white;
+      line-height: 1.2;
     }
-
-    .footer-description{
-      color:#b8d1e5;
-      margin-top:20px;
-      font-size:.95rem;
+    
+    .footer-company-tagline {
+      font-size: 0.9rem;
+      color: var(--accent);
+      font-weight: 400;
+      margin-top: 5px;
     }
-
-    .quick-links h4,
-    .social h4{
-      margin-bottom:18px;
+    
+    .footer-description {
+      color: #a3c5e0;
+      margin-top: 20px;
+      line-height: 1.6;
+      font-size: 0.95rem;
     }
-
-    .quick-links ul{
-      list-style:none;
+    
+    .quick-links h4, .social h4 {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+      color: white;
     }
-
-    .quick-links li{
-      margin-bottom:10px;
+    
+    .quick-links h4:after, .social h4:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--accent);
     }
-
-    .quick-links a,
-    .footer-contact a{
-      color:#cbdbe9;
-      text-decoration:none;
-      transition:.3s;
+    
+    .quick-links ul {
+      list-style: none;
     }
-
-    .quick-links a:hover,
-    .footer-contact a:hover{
-      color:var(--accent);
+    
+    .quick-links li {
+      margin-bottom: 12px;
     }
-
-    .social-links{
-      display:flex;
-      gap:15px;
-      margin-bottom:20px;
+    
+    .quick-links a {
+      color: #cbdbe9;
+      text-decoration: none;
+      transition: color .3s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
     }
-
-    .social-links a{
-      width:42px;
-      height:42px;
-      border-radius:50%;
-      background:rgba(255,255,255,.1);
-      display:flex;
-      align-items:center;
-      justify-content:center;
+    
+    .quick-links a:hover {
+      color: var(--accent);
     }
-
-    .copyright{
-      margin-top:40px;
-      text-align:center;
-      border-top:1px solid rgba(255,255,255,.1);
-      padding-top:20px;
-      color:rgba(255,255,255,.6);
-      font-size:.9rem;
+    
+    .social-links {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.1);
+      transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+      background: var(--accent);
+      transform: translateY(-3px);
+    }
+    
+    .footer-contact {
+      margin-top: 15px;
+    }
+    
+    .footer-contact a {
+      color: #a3c5e0;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+      transition: color .3s;
+    }
+    
+    .footer-contact a:hover {
+      color: var(--accent);
+    }
+    
+    .copyright {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      color: rgba(255,255,255,.6);
+      font-size: .9rem;
     }
 
     /* MOBILE */
