@@ -1,1055 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us | TapNex Technologies</title>
 
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/SenTineL-iwnl/tapnex/main/Geometric%20Logo%20with%20Navy%20and%20Silver.png">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Contact Us | TapNex Technologies</title>
 
-  <style>
+<link rel="icon" type="image/png"
+href="https://raw.githubusercontent.com/SenTineL-iwnl/tapnex/main/Geometric%20Logo%20with%20Navy%20and%20Silver.png">
 
-    :root{
-      --primary:#0066ff;
-      --dark:#001f3f;
-      --light:#f8fafc;
-      --accent:#00d4ff;
-      --transition:all .3s ease;
-    }
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:'Poppins',sans-serif;
-    }
-
-    body{
-      background:#fff;
-      color:#333;
-      overflow-x:hidden;
-      line-height:1.6;
-    }
-
-    .container{
-      width:100%;
-      max-width:1200px;
-      margin:auto;
-      padding:0 20px;
-    }
-
-    /* NAVBAR */
-
-    nav{
-      background:var(--dark);
-      padding:15px 20px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      position:sticky;
-      top:0;
-      z-index:1000;
-    }
-
-    .logo-container{
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
-
-    .logo-container img{
-      height:42px;
-    }
-
-    .logo-text{
-      color:#fff;
-      font-size:1.3rem;
-      font-weight:600;
-    }
-
-    nav ul{
-      list-style:none;
-      display:flex;
-      align-items:center;
-      gap:24px;
-    }
-
-    nav a{
-      text-decoration:none;
-      color:#fff;
-      font-weight:500;
-      transition:.3s;
-    }
-
-    nav a:hover{
-      color:var(--accent);
-    }
-
-    .contact-btn{
-      background:var(--primary);
-      padding:10px 18px;
-      border-radius:6px;
-    }
-
-    /* HERO */
-
-    .contact-hero{
-      background:
-      linear-gradient(rgba(0,31,63,.8), rgba(0,31,63,.8)),
-      url('https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg');
-
-      background-size:cover;
-      background-position:center;
-      padding:110px 20px 90px;
-      text-align:center;
-      color:#fff;
-    }
-
-    .contact-hero h1{
-      font-size:3rem;
-      margin-bottom:20px;
-    }
-
-    .contact-hero p{
-      max-width:700px;
-      margin:auto;
-      font-size:1.1rem;
-      opacity:.9;
-    }
-
-    /* MAIN CONTACT SECTION */
-
-    .contact-content{
-      max-width:1200px;
-      margin:80px auto;
-      padding:0 20px;
-
-      display:grid;
-      grid-template-columns:1fr 1.2fr;
-      gap:40px;
-      align-items:start;
-    }
-
-    .left-column{
-      display:flex;
-      flex-direction:column;
-      gap:40px;
-    }
-
-    /* LEFT CARDS */
-
-    .email-section,
-    .company-info{
-      background:var(--light);
-      padding:45px;
-      border-radius:14px;
-      box-shadow:0 10px 30px rgba(0,0,0,.06);
-    }
-
-    .email-section h2,
-    .company-info h2{
-      color:var(--dark);
-      margin-bottom:20px;
-      font-size:1.8rem;
-    }
-
-    .email-cta{
-      margin-top:25px;
-      display:inline-flex;
-      align-items:center;
-      gap:12px;
-      background:var(--primary);
-      color:#fff;
-      text-decoration:none;
-      padding:14px 26px;
-      border-radius:50px;
-      font-weight:600;
-      transition:.3s;
-    }
-
-    .email-cta:hover{
-      transform:translateY(-2px);
-    }
-
-    .info-box p{
-      color:#555;
-      margin-bottom:15px;
-    }
-
-    /* FORM */
-
-    .form-section{
-      background:#fff;
-      padding:50px;
-      border-radius:14px;
-      box-shadow:0 10px 30px rgba(0,0,0,.06);
-    }
-
-    .form-section h2{
-      text-align:center;
-      color:var(--dark);
-      margin-bottom:35px;
-      font-size:2rem;
-    }
-
-    .form-group{
-      margin-bottom:24px;
-    }
-
-    .form-group label{
-      display:block;
-      margin-bottom:8px;
-      font-weight:500;
-      color:var(--dark);
-    }
-
-    .form-control{
-      width:100%;
-      padding:15px 18px;
-      border:1px solid #ddd;
-      border-radius:10px;
-      font-size:1rem;
-      transition:.3s;
-    }
-
-    .form-control:focus{
-      outline:none;
-      border-color:var(--primary);
-      box-shadow:0 0 0 3px rgba(0,102,255,.1);
-    }
-
-    textarea.form-control{
-      min-height:160px;
-      resize:vertical;
-    }
-
-    .submit-btn{
-      width:100%;
-      border:none;
-      background:var(--primary);
-      color:#fff;
-      padding:15px;
-      border-radius:10px;
-      font-size:1rem;
-      font-weight:600;
-      cursor:pointer;
-      transition:.3s;
-    }
-
-    .submit-btn:hover{
-      background:#0055dd;
-    }
-
-    .sms-note{
-      font-size:.82rem;
-      color:#666;
-      line-height:1.7;
-      margin-bottom:22px;
-    }
-
-    .sms-note a{
-      color:var(--primary);
-      text-decoration:none;
-    }
-
-    .response-time{
-      margin-top:25px;
-      text-align:center;
-      color:#666;
-      font-size:.95rem;
-    }
-
-    /* FOOTER */
-
-    footer{
-      background:var(--dark);
-      color:#fff;
-      padding:60px 20px 30px;
-      margin-top:80px;
-    }
-
-    .footer-container{
-      max-width:1200px;
-      margin:auto;
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:40px;
-    }
-
-    .footer-brand{
-      display:flex;
-      gap:15px;
-      align-items:flex-start;
-    }
-
-    .footer-brand img{
-      height:50px;
-    }
-
-    .footer-company-name{
-      font-size:1.3rem;
-      font-weight:600;
-    }
-
-    .footer-company-tagline{
-      color:var(--accent);
-      font-size:.9rem;
-    }
-
-    .footer-description{
-      color:#b8d1e5;
-      margin-top:20px;
-      font-size:.95rem;
-    }
-
-    .quick-links h4,
-    .social h4{
-      margin-bottom:18px;
-    }
-
-    .quick-links ul{
-      list-style:none;
-    }
-
-    .quick-links li{
-      margin-bottom:10px;
-    }
-
-    .quick-links a,
-    .footer-contact a{
-      color:#cbdbe9;
-      text-decoration:none;
-      transition:.3s;
-    }
-
-    .quick-links a:hover,
-    .footer-contact a:hover{
-      color:var(--accent);
-    }
-
-    .social-links{
-      display:flex;
-      gap:15px;
-      margin-bottom:20px;
-    }
-
-    .social-links a{
-      width:42px;
-      height:42px;
-      border-radius:50%;
-      background:rgba(255,255,255,.1);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
-
-    .copyright{
-      margin-top:40px;
-      text-align:center;
-      border-top:1px solid rgba(255,255,255,.1);
-      padding-top:20px;
-      color:rgba(255,255,255,.6);
-      font-size:.9rem;
-    }
-
-    /* MOBILE */
-
-    @media(max-width:900px){
-
-      .contact-content{
-        grid-template-columns:1fr;
-      }
-
-      nav ul{
-        display:none;
-      }
-
-      .contact-hero h1{
-        font-size:2.3rem;
-      }
-
-      .form-section,
-      .email-section,
-      .company-info{
-        padding:30px;
-      }
-
-    }
-
-  </style>
-</head>
-
-<body>
-
-  <!-- NAV -->
-
-  <nav>
-
-    <div class="logo-container">
-      <img src="https://raw.githubusercontent.com/SenTineL-iwnl/tapnex/main/Geometric%20Logo%20with%20Navy%20and%20Silver.png">
-      <span class="logo-text">TapNex Technologies</span>
-    </div>
-
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
-    </ul>
-
-  </nav>
-
-  <!-- HERO -->
-
-  <section class="contact-hero">
-
-    <div class="container">
-
-      <h1>Let's Build Something Great</h1>
-
-      <p>
-        Reach out to discuss your IT staffing needs.
-        Our team is ready to help you find the perfect tech talent.
-      </p>
-
-    </div>
-
-  </section>
-
-  <!-- CONTACT SECTION -->
-
-  <div class="contact-content">
-
-    <!-- LEFT -->
-
-    <div class="left-column">
-
-      <section class="email-section">
-
-        <h2>Email Us Directly</h2>
-
-        <p>
-          Prefer to send us an email directly?
-          We typically respond within 24 hours.
-        </p>
-
-        <a href="mailto:info@tapnextech.com" class="email-cta">
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M4 4h16v16H4z"></path>
-            <polyline points="22,6 12,13 2,6"></polyline>
-          </svg>
-
-          info@tapnextech.com
-
-        </a>
-
-      </section>
-
-      <section class="company-info">
-
-        <h2>Our Office</h2>
-
-        <div class="info-box">
-
-          <p><strong>TAPNEX TECHNOLOGIES INC</strong></p>
-
-          <p>
-            314 Covert Avenue<br>
-            New Hyde Park, NY 11040
-          </p>
-
-          <p>
-            +1 (201) 855-3211
-          </p>
-
-        </div>
-
-      </section>
-
-    </div>
-
-    <!-- RIGHT -->
-
-    <section class="form-section">
-
-      <h2>Send Us a Message</h2>
-
-    <form id="contactForm">
-
-  <div class="form-group">
-    <label>Your Name</label>
-    <input 
-      type="text"
-      id="name"
-      class="form-control"
-      required>
-  </div>
-
-  <div class="form-group">
-    <label>Email Address</label>
-    <input 
-      type="email"
-      id="email"
-      class="form-control"
-      required>
-  </div>
-
-  <div class="form-group">
-    <label>Subject</label>
-
-    <select 
-      id="subject"
-      class="form-control"
-      required>
-
-      <option value="">Select a subject</option>
-      <option>Staffing Inquiry</option>
-      <option>Partnership Opportunity</option>
-      <option>Careers</option>
-      <option>Other</option>
-
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label>Your Message</label>
-
-    <textarea 
-      id="message"
-      class="form-control"
-      required></textarea>
-  </div>
-
-       <div class="form-group" style="margin-top:-5px; margin-bottom:20px;">
-
-  <label style="display:flex; align-items:flex-start; gap:12px; cursor:pointer;">
-
-    <input 
-      type="checkbox" 
-      id="smsConsent" 
-      required
-      style="
-        margin-top:4px;
-        width:18px;
-        height:18px;
-        cursor:pointer;
-      "
-    >
-
-    <span style="font-size:0.82rem; color:#666; line-height:1.7;">
-
-      By providing your phone number and clicking Submit, you agree to receive customer care and marketing SMS/emails from TapNex Technologies Inc.
-
-      Message frequency may vary.
-      Standard message and data rates may apply.
-
-      Reply STOP to opt out.
-      Reply HELP for help.
-
-     <a href="#"
-   onclick="openTermsModal()"
-   style="color:#0066ff; text-decoration:none;">
-   Terms &amp; Conditions
-</a>
-
-and
-
-<a href="#"
-   onclick="openPrivacyModal()"
-   style="color:#0066ff; text-decoration:none;">
-   Privacy Policy
-</a>
-      apply.
-
-    </span>
-
-  </label>
-
-</div>
-
-        <button type="submit" class="submit-btn">
-          Send Message
-        </button>
-
-      </form>
-
-      <div class="response-time">
-        Typical response time: 24 hours
-      </div>
-
-    </section>
-
-  </div>
-
-  <!-- FOOTER -->
-
-<footer>
-    <div class="footer-container">
-      <div>
-        <div class="footer-brand">
-          <img src="https://raw.githubusercontent.com/SenTineL-iwnl/tapnex/main/Geometric%20Logo%20with%20Navy%20and%20Silver.png" alt="Logo">
-          <div class="footer-brand-text">
-            <span class="footer-company-name">TapNex Technologies</span>
-            <span class="footer-company-tagline">Tap into Top IT Talent</span>
-          </div>
-        </div>
-        <p class="footer-description">Empowering businesses through innovative technology staffing solutions that drive growth and innovation.</p>
-      </div>
-
-      <div class="quick-links">
-        <h4>Our Services</h4>
-        <ul>
-          <li><a href="services.html#permanent">Permanent Staffing</a></li>
-          <li><a href="services.html#contract">Contract Staffing</a></li>
-          <li><a href="services.html#cth">Contract-to-Hire</a></li>
-          <li><a href="services.html#executive">Executive Search</a></li>
-          <li><a href="services.html#project">Project Teams</a></li>
-        </ul>
-      </div>
-
-      <div class="quick-links">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="blog1.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="social">
-        <h4>Connect With Us</h4>
-        <div class="social-links">
-         
-          <a href="https://www.linkedin.com/company/tapnex-tech/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <path d="M19 3H5C3.895 3 3 3.895 3 5V19C3 20.105 3.895 21 5 21H19C20.105 21 21 20.105 21 19V5C21 3.895 20.105 3 19 3ZM8 18H5V10H8V18ZM6.5 8.309C5.53 8.309 4.75 7.53 4.75 6.561C4.75 5.591 5.53 4.812 6.5 4.812C7.47 4.812 8.25 5.591 8.25 6.561C8.25 7.53 7.47 8.309 6.5 8.309ZM19 18H16V13.396C16 11.142 13.751 11.2 13.5 11.2C13.25 11.2 11 11.142 11 13.396V18H8V10H11V11.765C11.83 10.456 13.6 10.2 14.5 10.2C16.7 10.2 19 11.5 19 13.896V18Z" fill="white"/>
-            </svg>
-            </a>
- 
-
-        </div>
-       <div class="footer-contact">
-  
-
-  <!-- Email -->
-  <a href="mailto:info@tapnextech.com" style="display:flex; align-items:center; gap:8px;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="#00d4ff" stroke-width="2" viewBox="0 0 24 24">
-      <path d="M4 4h16v16H4z"></path>
-      <polyline points="22,6 12,13 2,6"></polyline>
-    </svg>
-    info@tapnextech.com
-  </a>
-
-  <!-- Phone -->
-  <a href="tel:+12018553211" style="display:flex; align-items:center; gap:8px;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="#00d4ff" stroke-width="2" viewBox="0 0 24 24">
-      <path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 6.18 2 2 0 0 1 5 4h4.09a2 2 0 0 1 2 1.72c.12.9.32 1.78.6 2.62a2 2 0 0 1-.45 2L10.09 11a16 16 0 0 0 6.91 6.91l.66-.66a2 2 0 0 1 2-.45c.84.28 1.72.48 2.62.6A2 2 0 0 1 22 16.92z"></path>
-    </svg>
-    +1 (201) 855-3211
-  </a>
-
-  <!-- Address -->
-  <div style="margin-top:12px; display:flex; gap:8px; align-items:flex-start; color:#a3c5e0; font-size:0.9rem;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="#00d4ff" stroke-width="2" viewBox="0 0 24 24" style="margin-top:3px;">
-      <rect x="3" y="3" width="18" height="18" rx="2"></rect>
-      <path d="M9 21V9h6v12"></path>
-    </svg>
-    <span>
-      314 Covert Avenue,<br>
-      New Hyde Park, NY 11040
-    </span>
-  </div>
-</div>
-      </div>
-    </div>
-    <div class="copyright">© 2025 TapNex Technologies Inc. All rights reserved.</div>
-  </footer>
-<!-- TERMS MODAL -->
-<div id="termsModal" class="modal">
-
-  <div class="modal-content">
-
-    <span class="close" onclick="closeTermsModal()">&times;</span>
-
-    <h2>Terms & Conditions</h2>
-
-    <div style="max-height:70vh; overflow-y:auto; padding-right:10px;">
-
-  <p>
-    Please read these terms carefully. By using our website
-    or services, you agree to be bound by these terms.
-    If you act on behalf of an organization, you represent
-    that you have the authority to bind that organization
-    to these terms.
-  </p>
-
-  <h3 style="margin-top:25px; color:#001f3f;">
-    1. Company Overview
-  </h3>
-
-  <p>
-    TapNex Technologies ("Company", "we", "us", or "our")
-    is a professional IT staffing and technology solutions
-    provider operating in the United States.
-  </p>
-
-  <p>
-    We specialize in delivering IT staffing,
-    recruitment solutions, technology consulting,
-    and workforce services for businesses
-    across multiple industries.
-  </p>
-
-  <h3 style="margin-top:25px; color:#001f3f;">
-    2. Website Usage
-  </h3>
-
-  <p>
-    Access to our website is granted on a temporary basis.
-    We reserve the right to withdraw or modify our services
-    without notice.
-  </p>
-
-  <p>
-    You agree not to misuse our systems,
-    introduce malicious code,
-    or attempt unauthorized access
-    to our servers or data.
-  </p>
-
-  <p>
-    You must be at least 18 years old
-    to use our services or submit personal information.
-  </p>
-
-  <h3 style="margin-top:25px; color:#001f3f;">
-    3. User Information
-  </h3>
-
-  <p>
-    When you submit information through our forms,
-    applications, or contact pages,
-    you warrant that all provided information
-    is accurate, current, and complete.
-  </p>
-
-  <h3 style="margin-top:25px; color:#001f3f;">
-    4. Communication Consent (TCPA Compliant)
-  </h3>
-
-  <p>
-    By submitting your contact information,
-    including your telephone number,
-    you expressly consent to receive communications
-    from TapNex Technologies.
-  </p>
-
-  <h3 style="margin-top:20px; color:#001f3f;">
-    SMS/Text Message & Email Consent
-  </h3>
-
-  <p>
-    You agree to receive customer care
-    and marketing SMS/emails
-    from TapNex Technologies.
-  </p>
-
-  <ul style="padding-left:20px; color:#555;">
-
-    <li>
-      Message frequency may vary
-      based on your interaction with us.
-    </li>
-
-    <li>
-      Standard message and data rates may apply.
-    </li>
-
-    <li>
-      You may opt out anytime
-      by replying STOP.
-    </li>
-
-    <li>
-      Reply HELP for assistance.
-    </li>
-
-    <li>
-      Consent to receive marketing messages
-      is not a condition of purchasing services.
-    </li>
-
-  </ul>
-
-  <h3 style="margin-top:25px; color:#001f3f;">
-    5. Data Privacy & Protection
-  </h3>
-
-  <p>
-    TapNex Technologies follows reasonable
-    data protection and security standards
-    to safeguard your information.
-  </p>
-
-  <h3 style="margin-top:25px; color:#001f3f;">
-    6. Intellectual Property
-  </h3>
-
-  <p>
-    All website content including text,
-    graphics, branding, images,
-    designs, and software are the property
-    of TapNex Technologies and protected
-    under applicable intellectual property laws.
-  </p>
-
-  <h3 style="margin-top:25px; color:#001f3f;">
-    7. Third-Party Links
-  </h3>
-
-  <p>
-    Our website may contain links
-    to third-party websites or services.
-    We are not responsible for their content,
-    privacy policies, or practices.
-  </p>
-
-  <h3 style="margin-top:25px; color:#001f3f;">
-    8. Limitation of Liability
-  </h3>
-
-  <p>
-    TapNex Technologies shall not be liable
-    for any indirect, incidental,
-    special, consequential,
-    or punitive damages resulting
-    from your use of our services or website.
-  </p>
-
-  <h3 style="margin-top:25px; color:#001f3f;">
-    9. Services Disclaimer
-  </h3>
-
-  <p>
-    Our services are provided on an
-    "AS IS" and "AS AVAILABLE" basis
-    without warranties of any kind,
-    whether express or implied.
-  </p>
-
-  <h3 style="margin-top:25px; color:#001f3f;">
-    10. Governing Law
-  </h3>
-
-  <p>
-    These Terms shall be governed
-    in accordance with the laws
-    of the State of New York, USA.
-  </p>
-
-  <h3 style="margin-top:25px; color:#001f3f;">
-    11. Updates to Terms
-  </h3>
-
-  <p>
-    We reserve the right to modify
-    or replace these Terms at any time.
-    Updated terms will be posted on this page.
-  </p>
-
-  <h3 style="margin-top:25px; color:#001f3f;">
-    12. Contact Information
-  </h3>
-
-  <p>
-    TapNex Technologies<br>
-    314 Covert Avenue,<br>
-    New Hyde Park, NY 11040<br><br>
-
-    Email:
-    info@tapnextech.com<br>
-
-    Phone:
-    +1 (201) 855-3211
-  </p>
-
-</div>
-
-  </div>
-
-</div>
-
-<!-- PRIVACY MODAL -->
-<div id="privacyModal" class="modal">
-
-  <div class="modal-content">
-
-    <span class="close" onclick="closePrivacyModal()">&times;</span>
-
-    <h2>Privacy Policy</h2>
-
-   <div style="max-height:70vh; overflow-y:auto; padding-right:10px;">
-
-  <p>
-    Tapnex Technologies Inc. ("we," "our," or "us")
-    is committed to protecting your privacy.
-    This Privacy Policy explains how we collect,
-    use, disclose, and safeguard your information
-    when you visit our website or use our services.
-  </p>
-
-  <h3 style="margin-top:25px; color:#001f3f;">
-    Information We Collect
-  </h3>
-
-  <p>
-    We may collect the following types of information:
-  </p>
-
-  <h3 style="margin-top:20px; color:#001f3f;">
-    Personal Information
-  </h3>
-
-  <ul style="padding-left:20px; color:#555;">
-
-    <li>Name, email address, and phone number</li>
-
-    <li>Company name and job title</li>
-
-    <li>Resume and employment history</li>
-
-    <li>Professional qualifications and skills</li>
-
-  </ul>
-
-  <h3 style="margin-top:20px; color:#001f3f;">
-    Automatic Information
-  </h3>
-
-  <ul style="padding-left:20px; color:#555;">
-
-    <li>IP address and browser type</li>
-
-    <li>Device information</li>
-
-    <li>Usage data and analytics</li>
-
-    <li>Cookies and similar technologies</li>
-
-  </ul>
-
-  <h3 style="margin-top:25px; color:#001f3f;">
-    How We Use Your Information
-  </h3>
-
-  <ul style="padding-left:20px; color:#555;">
-
-    <li>
-      Provide and improve our staffing
-      and consulting services
-    </li>
-
-    <li>
-      Process job applications
-      and candidate placements
-    </li>
-
-    <li>
-      Communicate with clients and candidates
-    </li>
-
-    <li>
-      Respond to inquiries and support requests
-    </li>
-
-    <li>
-      Send customer care updates,
-      service notifications,
-      and marketing communications
-    </li>
-
-  </ul>
-
-  <h3 style="margin-top:25px; color:#001f3f;">
-    Data Protection
-  </h3>
-
-  <p>
-    Tapnex Technologies Inc.
-    implements reasonable safeguards
-    to help protect your personal information
-    from unauthorized access,
-    misuse, or disclosure.
-  </p>
-
-  <h3 style="margin-top:25px; color:#001f3f;">
-    Third-Party Services
-  </h3>
-
-  <p>
-    Our website may contain links
-    to third-party websites or services.
-    We are not responsible for the privacy practices
-    or content of those platforms.
-  </p>
-
-  <h3 style="margin-top:25px; color:#001f3f;">
-    Cookies & Analytics
-  </h3>
-
-  <p>
-    We may use cookies and analytics tools
-    to improve website performance,
-    enhance user experience,
-    and better understand visitor interactions.
-  </p>
-
-  <h3 style="margin-top:25px; color:#001f3f;">
-    Your Rights
-  </h3>
-
-  <p>
-    You may request access,
-    correction, or deletion
-    of your personal information
-    by contacting us directly.
-  </p>
-
-  <h3 style="margin-top:25px; color:#001f3f;">
-    Contact Us
-  </h3>
-
-  <p>
-    For administrative, privacy,
-    or legal inquiries, please contact:
-  </p>
-
-  <p style="margin-top:15px;">
-
-    <strong>Tapnex Technologies Inc.</strong><br><br>
-
-    314 Covert Avenue,<br>
-    New Hyde Park, NY 11040, USA<br><br>
-
-    Email:
-    info@tapnextech.com<br>
-
-    Phone:
-    +1 (201) 855-3211
-
-  </p>
-
-</div>
-  </div>
-
-</div>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
+:root{
+  --primary:#0066ff;
+  --dark:#001f3f;
+  --light:#f8fafc;
+  --accent:#00d4ff;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#fff;
+  color:#333;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+.container{
+  width:100%;
+  max-width:1200px;
+  margin:auto;
+  padding:0 20px;
+}
+
+/* NAVBAR */
+
+nav{
+  background:var(--dark);
+  padding:15px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.logo-container{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo-container img{
+  height:42px;
+}
+
+.logo-text{
+  color:#fff;
+  font-size:1.3rem;
+  font-weight:600;
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:24px;
+}
+
+nav a{
+  text-decoration:none;
+  color:#fff;
+  font-weight:500;
+  transition:.3s;
+}
+
+nav a:hover{
+  color:var(--accent);
+}
+
+.contact-btn{
+  background:var(--primary);
+  padding:10px 18px;
+  border-radius:6px;
+}
+
+/* HERO */
+
+.contact-hero{
+  background:
+  linear-gradient(rgba(0,31,63,.8), rgba(0,31,63,.8)),
+  url('https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg');
+
+  background-size:cover;
+  background-position:center;
+
+  padding:110px 20px 90px;
+  text-align:center;
+  color:#fff;
+}
+
+.contact-hero h1{
+  font-size:3rem;
+  margin-bottom:20px;
+}
+
+.contact-hero p{
+  max-width:700px;
+  margin:auto;
+  font-size:1.1rem;
+}
+
+/* CONTACT SECTION */
+
+.contact-content{
+  max-width:1200px;
+  margin:80px auto;
+  padding:0 20px;
+
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:40px;
+}
+
+.left-column{
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+}
+
+.email-section,
+.company-info,
+.form-section{
+  background:#fff;
+  padding:45px;
+  border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+
+.email-section h2,
+.company-info h2,
+.form-section h2{
+  color:var(--dark);
+  margin-bottom:20px;
+}
+
+.email-cta{
+  margin-top:25px;
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+
+  background:var(--primary);
+  color:#fff;
+  text-decoration:none;
+
+  padding:14px 26px;
+  border-radius:50px;
+  font-weight:600;
+}
+
+.info-box p{
+  margin-bottom:15px;
+}
+
+.form-group{
+  margin-bottom:24px;
+}
+
+.form-group label{
+  display:block;
+  margin-bottom:8px;
+  font-weight:500;
+  color:var(--dark);
+}
+
+.form-control{
+  width:100%;
+  padding:15px 18px;
+  border:1px solid #ddd;
+  border-radius:10px;
+  font-size:1rem;
+}
+
+.form-control:focus{
+  outline:none;
+  border-color:var(--primary);
+}
+
+textarea.form-control{
+  min-height:160px;
+  resize:vertical;
+}
+
+.submit-btn{
+  width:100%;
+  border:none;
+  background:var(--primary);
+  color:#fff;
+  padding:15px;
+  border-radius:10px;
+  font-size:1rem;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.submit-btn:hover{
+  background:#0055dd;
+}
+
+.submit-btn:disabled{
+  opacity:.7;
+  cursor:not-allowed;
+}
+
+.response-time{
+  margin-top:25px;
+  text-align:center;
+  color:#666;
+}
+
+/* FOOTER */
+
+footer{
+  background:var(--dark);
+  color:#fff;
+  padding:60px 20px 30px;
+  margin-top:80px;
+}
+
+.footer-container{
+  max-width:1200px;
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:40px;
+}
+
+.footer-brand{
+  display:flex;
+  gap:15px;
+  align-items:flex-start;
+}
+
+.footer-brand img{
+  height:50px;
+}
+
+.footer-company-name{
+  display:block;
+  font-size:1.3rem;
+  font-weight:600;
+}
+
+.footer-company-tagline{
+  color:var(--accent);
+  font-size:.9rem;
+}
+
+.footer-description{
+  margin-top:20px;
+  color:#b8d1e5;
+}
+
+.quick-links ul{
+  list-style:none;
+}
+
+.quick-links li{
+  margin-bottom:10px;
+}
+
+.quick-links a,
+.footer-contact a{
+  color:#cbdbe9;
+  text-decoration:none;
+}
+
+.social-links{
+  display:flex;
+  gap:15px;
+  margin-bottom:20px;
+}
+
+.social-links a{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:rgba(255,255,255,.1);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.copyright{
+  margin-top:40px;
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,.1);
+  padding-top:20px;
+  color:rgba(255,255,255,.6);
+}
+
+/* MODAL */
 
 .modal{
   display:none;
@@ -1060,7 +324,7 @@ and
   width:100%;
   height:100%;
   overflow:auto;
-  background:rgba(0,0,0,0.6);
+  background:rgba(0,0,0,.6);
   padding:20px;
 }
 
@@ -1071,17 +335,6 @@ and
   border-radius:14px;
   max-width:600px;
   position:relative;
-  animation:fadeIn .3s ease;
-}
-
-.modal-content h2{
-  margin-bottom:20px;
-  color:#001f3f;
-}
-
-.modal-content p{
-  color:#555;
-  line-height:1.8;
 }
 
 .close{
@@ -1090,25 +343,356 @@ and
   top:15px;
   font-size:28px;
   cursor:pointer;
-  color:#666;
 }
 
-.close:hover{
-  color:#000;
-}
+/* MOBILE */
 
-@keyframes fadeIn{
-  from{
-    opacity:0;
-    transform:translateY(-10px);
+@media(max-width:900px){
+
+  .contact-content{
+    grid-template-columns:1fr;
   }
-  to{
-    opacity:1;
-    transform:translateY(0);
+
+  nav ul{
+    display:none;
   }
+
+  .contact-hero h1{
+    font-size:2.2rem;
+  }
+
+  .form-section,
+  .email-section,
+  .company-info{
+    padding:30px;
+  }
+
 }
 
 </style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo-container">
+
+<img src="https://raw.githubusercontent.com/SenTineL-iwnl/tapnex/main/Geometric%20Logo%20with%20Navy%20and%20Silver.png">
+
+<span class="logo-text">
+TapNex Technologies
+</span>
+
+</div>
+
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html" class="contact-btn">Contact Us</a></li>
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="contact-hero">
+
+<div class="container">
+
+<h1>Let's Build Something Great</h1>
+
+<p>
+Reach out to discuss your IT staffing needs.
+Our team is ready to help you find the perfect tech talent.
+</p>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<div class="contact-content">
+
+<div class="left-column">
+
+<section class="email-section">
+
+<h2>Email Us Directly</h2>
+
+<p>
+Prefer to send us an email directly?
+We typically respond within 24 hours.
+</p>
+
+<a href="mailto:info@tapnextech.com" class="email-cta">
+info@tapnextech.com
+</a>
+
+</section>
+
+<section class="company-info">
+
+<h2>Our Office</h2>
+
+<div class="info-box">
+
+<p><strong>TAPNEX TECHNOLOGIES INC</strong></p>
+
+<p>
+314 Covert Avenue<br>
+New Hyde Park, NY 11040
+</p>
+
+<p>
++1 (201) 855-3211
+</p>
+
+</div>
+
+</section>
+
+</div>
+
+<!-- FORM -->
+
+<section class="form-section">
+
+<h2>Send Us a Message</h2>
+
+<form id="contactForm">
+
+<div class="form-group">
+
+<label>Your Name</label>
+
+<input
+type="text"
+id="name"
+class="form-control"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>Email Address</label>
+
+<input
+type="email"
+id="email"
+class="form-control"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>Subject</label>
+
+<select
+id="subject"
+class="form-control"
+required>
+
+<option value="">Select a subject</option>
+<option>Staffing Inquiry</option>
+<option>Partnership Opportunity</option>
+<option>Careers</option>
+<option>Other</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>Your Message</label>
+
+<textarea
+id="message"
+class="form-control"
+required></textarea>
+
+</div>
+
+<div class="form-group">
+
+<label style="display:flex; gap:12px; align-items:flex-start; cursor:pointer;">
+
+<input
+type="checkbox"
+required
+style="margin-top:4px; width:18px; height:18px;">
+
+<span style="font-size:.82rem; color:#666; line-height:1.7;">
+
+By clicking submit, you agree to receive customer care and marketing SMS/emails from TapNex Technologies Inc.
+
+Reply STOP to opt out.
+
+<a
+href="javascript:void(0)"
+onclick="openTermsModal()"
+style="color:#0066ff;">
+Terms & Conditions
+</a>
+
+and
+
+<a
+href="javascript:void(0)"
+onclick="openPrivacyModal()"
+style="color:#0066ff;">
+Privacy Policy
+</a>
+
+</span>
+
+</label>
+
+</div>
+
+<button type="submit" class="submit-btn">
+Send Message
+</button>
+
+</form>
+
+<div class="response-time">
+Typical response time: 24 hours
+</div>
+
+</section>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-container">
+
+<div>
+
+<div class="footer-brand">
+
+<img src="https://raw.githubusercontent.com/SenTineL-iwnl/tapnex/main/Geometric%20Logo%20with%20Navy%20and%20Silver.png">
+
+<div>
+
+<span class="footer-company-name">
+TapNex Technologies
+</span>
+
+<span class="footer-company-tagline">
+Tap into Top IT Talent
+</span>
+
+</div>
+
+</div>
+
+<p class="footer-description">
+Empowering businesses through innovative technology staffing solutions.
+</p>
+
+</div>
+
+<div class="quick-links">
+
+<h4>Company</h4>
+
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+
+</div>
+
+<div class="social">
+
+<h4>Connect With Us</h4>
+
+<div class="social-links">
+
+<a href="https://www.linkedin.com/company/tapnex-tech/" target="_blank">
+in
+</a>
+
+</div>
+
+<div class="footer-contact">
+
+<p>info@tapnextech.com</p>
+
+<p>+1 (201) 855-3211</p>
+
+<p>
+314 Covert Avenue,<br>
+New Hyde Park, NY 11040
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="copyright">
+© 2025 TapNex Technologies Inc. All rights reserved.
+</div>
+
+</footer>
+
+<!-- TERMS MODAL -->
+
+<div id="termsModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeTermsModal()">
+&times;
+</span>
+
+<h2>Terms & Conditions</h2>
+
+<p>
+By using our website and services, you agree to our terms and conditions.
+</p>
+
+</div>
+
+</div>
+
+<!-- PRIVACY MODAL -->
+
+<div id="privacyModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closePrivacyModal()">
+&times;
+</span>
+
+<h2>Privacy Policy</h2>
+
+<p>
+We respect your privacy and protect your information.
+</p>
+
+</div>
+
+</div>
+
+<!-- JAVASCRIPT -->
 
 <script>
 
@@ -1140,37 +724,58 @@ window.onclick = function(event){
   if(event.target == privacyModal){
     privacyModal.style.display = "none";
   }
-}
 
-</script>
-  <script>
+};
 
 document.getElementById("contactForm")
 .addEventListener("submit", async function(e){
 
   e.preventDefault();
 
+  const btn = document.querySelector(".submit-btn");
+
+  btn.disabled = true;
+  btn.innerText = "Sending...";
+
   const data = {
-    name: document.getElementById("name").value,
-    email: document.getElementById("email").value,
-    subject: document.getElementById("subject").value,
-    message: document.getElementById("message").value
+
+    name:document.getElementById("name").value,
+    email:document.getElementById("email").value,
+    subject:document.getElementById("subject").value,
+    message:document.getElementById("message").value
+
   };
 
-  await fetch("https://script.google.com/macros/s/AKfycbxVP_4QHoG5ZEchizJaFGJxMLsAC4upjrc3ZXZHNJdXMRJQ59RBFlUWRCJvRu692Wb8Lw/exec", {
+  try{
 
-    method: "POST",
+    await fetch(
+      "https://script.google.com/macros/s/AKfycbxVP_4QHoG5ZEchizJaFGJxMLsAC4upjrc3ZXZHNJdXMRJQ59RBFlUWRCJvRu692Wb8Lw/exec",
+      {
+        method:"POST",
+        mode:"no-cors",
+        headers:{
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify(data)
+      }
+    );
 
-    body: JSON.stringify(data)
+    alert("Message sent successfully!");
 
-  });
+    this.reset();
 
-  alert("Message sent successfully!");
+  }catch(error){
 
-  this.reset();
+    alert("Something went wrong.");
+
+  }
+
+  btn.disabled = false;
+  btn.innerText = "Send Message";
 
 });
 
 </script>
+
 </body>
 </html>
