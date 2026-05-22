@@ -477,15 +477,33 @@
 
       <h2>Send Us a Message</h2>
 
-      <form id="contactForm">
-        <div class="form-group">
-          <label>Your Name</label>
-          <input type="text" class="form-control" required>
-        </div>
+    <form id="contactForm">
 
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" class="form-control" required>
+  <div class="form-group">
+    <label>Your Name</label>
+    <input 
+      type="text"
+      id="name"
+      class="form-control"
+      required>
+  </div>
+
+  <div class="form-group">
+    <label>Email Address</label>
+    <input 
+      type="email"
+      id="email"
+      class="form-control"
+      required>
+  </div>
+
+  <div class="form-group">
+    <label>Subject</label>
+
+    <select 
+      id="subject"
+      class="form-control"
+      required>
         </div>
 
         <div class="form-group">
@@ -503,7 +521,10 @@
 
         <div class="form-group">
           <label>Your Message</label>
-          <textarea class="form-control" required></textarea>
+          <textarea 
+  id="message"
+  class="form-control"
+  required></textarea>
         </div>
 
        <div class="form-group" style="margin-top:-5px; margin-bottom:20px;">
