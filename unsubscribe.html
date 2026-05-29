@@ -1,103 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Unsubscribe | TapNex Technologies</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<title>Unsubscribe | TapNex Technologies</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body{
-      margin:0;
-      font-family:Arial,sans-serif;
-      background:#f5f7fb;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      min-height:100vh;
-    }
-
-    .box{
-      background:#fff;
-      width:90%;
-      max-width:480px;
-      padding:40px;
-      border-radius:12px;
-      box-shadow:0 10px 30px rgba(0,0,0,.08);
-      text-align:center;
-    }
-
-    h2{
-      margin-top:0;
-      color:#111827;
-    }
-
-    p{
-      color:#6b7280;
-      margin-bottom:20px;
-    }
-
-    input{
-      width:100%;
-      padding:14px;
-      border:1px solid #d1d5db;
-      border-radius:8px;
-      font-size:16px;
-      box-sizing:border-box;
-      margin-bottom:16px;
-    }
-
-    button{
-      width:100%;
-      padding:14px;
-      background:#0d6efd;
-      color:#fff;
-      border:none;
-      border-radius:8px;
-      font-size:16px;
-      cursor:pointer;
-    }
-
-    button:hover{
-      background:#0b5ed7;
-    }
-
-    .footer{
-      margin-top:18px;
-      font-size:13px;
-      color:#9ca3af;
-    }
-  </style>
+<style>
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f5f7fb;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+}
+.box{
+  background:#fff;
+  width:90%;
+  max-width:480px;
+  padding:40px;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  text-align:center;
+}
+input{
+  width:100%;
+  padding:14px;
+  margin-bottom:16px;
+  border:1px solid #ddd;
+  border-radius:8px;
+  box-sizing:border-box;
+}
+button{
+  width:100%;
+  padding:14px;
+  background:#0d6efd;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:16px;
+}
+button:hover{
+  background:#0b5ed7;
+}
+</style>
 </head>
 <body>
 
-  <div class="box">
-    <h2>Unsubscribe from Emails</h2>
+<div class="box">
+  <h2>Unsubscribe from Emails</h2>
 
-    <p>
-      Enter your email address below to stop receiving emails from TapNex Technologies.
-    </p>
+  <p>
+    Enter your email address below to unsubscribe from TapNex Technologies emails.
+  </p>
 
-    <form
-      action="https://script.google.com/macros/s/AKfycbyVrW8yBZu0ciJaASxiw1CtHmY4-LELWWMQEnbsVspDtJiRpz16PsKsEpoA2L9b4nDZ5g/exec"
-      method="POST"
-      target="_blank"
+  <form
+    action="https://script.google.com/macros/s/AKfycbyrpKirqtRDUweD6mKx2Q8-yMqr1iXXCYxbpu-MDR-VGYM8qQi6LOon_hlviL81RtuWzw/exec"
+    method="POST"
+    target="_blank"
+  >
+    <input
+      type="email"
+      name="email"
+      placeholder="Enter your email address"
+      required
     >
-      <input
-        type="email"
-        name="email"
-        placeholder="Enter your email address"
-        required
-      />
 
-      <button type="submit">
-        Unsubscribe
-      </button>
-    </form>
-
-    <div class="footer">
-      TapNex Technologies
-    </div>
-  </div>
+    <button type="submit">Unsubscribe</button>
+  </form>
+</div>
 
 </body>
 </html>
