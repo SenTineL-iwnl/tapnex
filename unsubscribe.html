@@ -1,76 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Unsubscribe | TapNex Technologies</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>Unsubscribe | TapNex Technologies Inc.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<style>
-body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#f5f7fb;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:100vh;
-}
-.box{
-  background:#fff;
-  width:90%;
-  max-width:480px;
-  padding:40px;
-  border-radius:12px;
-  box-shadow:0 10px 30px rgba(0,0,0,.08);
-  text-align:center;
-}
-input{
-  width:100%;
-  padding:14px;
-  margin-bottom:16px;
-  border:1px solid #ddd;
-  border-radius:8px;
-  box-sizing:border-box;
-}
-button{
-  width:100%;
-  padding:14px;
-  background:#0d6efd;
-  color:#fff;
-  border:none;
-  border-radius:8px;
-  cursor:pointer;
-  font-size:16px;
-}
-button:hover{
-  background:#0b5ed7;
-}
-</style>
+  <style>
+    body{
+      margin:0;
+      font-family:Arial,sans-serif;
+      background:#f5f7fb;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:100vh;
+    }
+
+    .box{
+      background:#ffffff;
+      width:90%;
+      max-width:500px;
+      padding:40px;
+      border-radius:12px;
+      box-shadow:0 10px 30px rgba(0,0,0,.08);
+      text-align:center;
+    }
+
+    h2{
+      margin-top:0;
+      color:#111827;
+    }
+
+    p{
+      color:#6b7280;
+      line-height:1.5;
+      margin-bottom:20px;
+    }
+
+    input{
+      width:100%;
+      padding:14px;
+      margin-bottom:16px;
+      border:1px solid #d1d5db;
+      border-radius:8px;
+      font-size:16px;
+      box-sizing:border-box;
+    }
+
+    button{
+      width:100%;
+      padding:14px;
+      background:#0d6efd;
+      color:#fff;
+      border:none;
+      border-radius:8px;
+      font-size:16px;
+      cursor:pointer;
+    }
+
+    button:hover{
+      background:#0b5ed7;
+    }
+
+    #message{
+      display:none;
+      margin-top:20px;
+      color:green;
+      font-weight:600;
+      font-size:16px;
+    }
+
+    .footer{
+      margin-top:25px;
+      font-size:13px;
+      color:#9ca3af;
+    }
+  </style>
 </head>
 <body>
 
-<div class="box">
-  <h2>Unsubscribe from Emails</h2>
+  <div class="box">
+    <h2>Unsubscribe from Emails</h2>
 
-  <p>
-    Enter your email address below to unsubscribe from TapNex Technologies emails.
-  </p>
+    <p>
+      Enter your email address below to unsubscribe from communications from
+      TapNex Technologies Inc.
+    </p>
 
-  <form
-    action="https://script.google.com/macros/s/AKfycbyrpKirqtRDUweD6mKx2Q8-yMqr1iXXCYxbpu-MDR-VGYM8qQi6LOon_hlviL81RtuWzw/exec"
-    method="POST"
-    target="_blank"
-  >
-    <input
-      type="email"
-      name="email"
-      placeholder="Enter your email address"
-      required
-    >
+    <form id="unsubscribeForm">
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Enter your email address"
+        required
+      />
 
-    <button type="submit">Unsubscribe</button>
-  </form>
-</div>
+      <button type="submit">
+        Unsubscribe
+      </button>
+    </form>
+
+    <div id="message">
+      You have been successfully unsubscribed.
+    </div>
+
+    <div class="footer">
+      © TapNex Technologies Inc.
+    </div>
+  </div>
+
+  <script>
+    document
+      .getElementById("unsubscribeForm")
+      .addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const email = document.getElementById("email").value;
+
+        fetch(
+          "https://script.google.com/macros/s/AKfycbyrpKirqtRDUweD6mKx2Q8-yMqr1iXXCYxbpu-MDR-VGYM8qQi6LOon_hlviL81RtuWzw/exec",
+          {
+            method: "POST",
+            body: new URLSearchParams({
+              email: email
+            })
+          }
+        )
+        .then(() => {
+          document.getElementById("unsubscribeForm").style.display = "none";
+          document.getElementById("message").style.display = "block";
+        })
+        .catch(() => {
+          alert("Something went wrong. Please try again.");
+        });
+      });
+  </script>
 
 </body>
 </html>
