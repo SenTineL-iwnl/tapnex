@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Unsubscribe | TapNex Technologies</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#f7f7f7;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+}
+.box{
+background:white;
+padding:40px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+max-width:500px;
+text-align:center;
+}
+input{
+width:100%;
+padding:12px;
+margin:12px 0;
+border:1px solid #ddd;
+border-radius:8px;
+}
+button{
+background:#0d6efd;
+color:white;
+border:none;
+padding:12px 24px;
+border-radius:8px;
+cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+<h2>Unsubscribe from Emails</h2>
+<p>Enter your email address below.</p>
+
+<form action="https://formsubmit.co/YOUR_EMAIL@tapnextech.com" method="POST">
+<input type="email" name="email" placeholder="Your email address" required>
+
+<input type="hidden" name="_subject" value="Unsubscribe Request">
+<input type="hidden" name="_captcha" value="false">
+
+<button type="submit">Unsubscribe</button>
+</form>
+</div>
+
+</body>
+</html>
